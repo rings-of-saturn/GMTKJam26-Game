@@ -154,6 +154,7 @@ collision_visibility_mode = 1
 
 [node name="Player2" parent="." unique_id=465695460 instance=ExtResource("1_0wfyh")]
 position = Vector2(-21, -8)
+scale = Vector2(4, 4)
 JUMP_VELOCITY = 120
 JUMP_HOLD_VELOCITY = 12
 
