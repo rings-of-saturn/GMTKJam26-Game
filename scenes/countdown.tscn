@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://dv8bgcny7c665"]
+
+[ext_resource type="Script" uid="uid://c0yyq3mrbqh1s" path="res://scripts/countdown.gd" id="1_c4awr"]
+[ext_resource type="FontFile" uid="uid://bu6wt63v3m8fw" path="res://fonts/Seven Segment.ttf" id="2_0xc00"]
+
+[node name="Countdown" type="Sprite2D" unique_id=1833679629]
+script = ExtResource("1_c4awr")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=579906080]
+anchors_preset = -1
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 23.0
+offset_top = -319.0
+offset_right = 260.5
+offset_bottom = -193.0
+theme_override_fonts/normal_font = ExtResource("2_0xc00")
+theme_override_fonts/bold_font = ExtResource("2_0xc00")
+theme_override_font_sizes/normal_font_size = 32
+theme_override_font_sizes/bold_font_size = 64
+bbcode_enabled = true
+text = "[color=red]00[b]:[/b]00[/color]"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Timer" type="Timer" parent="." unique_id=225237957]
+autostart = true

@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dxyhlc0segtnx" path="res://scenes/player.tscn" id="1_0wfyh"]
 [ext_resource type="Texture2D" uid="uid://bi1a140corwcb" path="res://icon.svg" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://dv8bgcny7c665" path="res://scenes/countdown.tscn" id="3_sugp2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0xm2m"]
 texture = ExtResource("1_ig7tw")
@@ -152,3 +153,9 @@ tile_set = SubResource("TileSet_enspi")
 collision_visibility_mode = 1
 
 [node name="Player2" parent="." unique_id=465695460 instance=ExtResource("1_0wfyh")]
+position = Vector2(-21, -8)
+scale = Vector2(4, 4)
+JUMP_VELOCITY = 120
+JUMP_HOLD_VELOCITY = 12
+
+[node name="Countdown" parent="." unique_id=1833679629 instance=ExtResource("3_sugp2")]
