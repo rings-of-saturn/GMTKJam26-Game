@@ -1,72 +1,113 @@
 extends CharacterBody2D
 
 
-@export var JUMP_HOLD_MAX = 0.5
-@export var JUMP_VELOCITY = 2400
-@export var JUMP_HOLD_VELOCITY = 120
-@export var COYOTE_SECONDS = 0.5
-@export var GRAVITY = 200
-@export var DOWN_PRESS_MULT = 0.25
-@export var FALL_TIME_MULT = 4
-@export var FALL_TIME_MAX = 3
-@export var WALK_SPEED_MULT = 2
-@export var WALK_SPEED_MAX = 400
-@export var DECELERATION_SPEED = 10
-@export var DOWN_PRESS_MAX = 0.5
-@export var WALK_TIME_MAX = 0.5
+# Speed approached toward when falling. 
+@export var MAX_FALL = 160.0
 
-var current_coyote = 0
-var just_fell = false
-var down_pressed = 1
-var fall_time = 0
-var walk_time = 1
+@export var GRAVITY = 900.0
 
-func _physics_process(delta: float) -> void:
-	if current_coyote-1 >= 0:
-		current_coyote-=1
-	if not is_on_floor() and not just_fell and current_coyote == 0:
-		current_coyote = seconds_to_phys_frames(COYOTE_SECONDS)
-		just_fell = true
+# When velocity.y drops below this AND jump is held, gravity halves.
+@export var HALF_GRAV_THRESHOLD = 40.0
 
-	if Input.is_action_pressed("player_down") and down_pressed+1 <= seconds_to_phys_frames(DOWN_PRESS_MAX):
-		down_pressed+=1
-		print(down_pressed)
-	if not Input.is_action_pressed("player_down") and down_pressed-1 >= 1:
-		down_pressed-=1
-		print(down_pressed)
+# Terminal velocity while fast-falling (holding down).
+@export var FAST_MAX_FALL = 240.0
 
+# Approach rate toward FAST_MAX_FALL.
+@export var FAST_MAX_ACCEL = 300.0
+
+# Initial upward speed applied on jump.
+@export var JUMP_SPEED = -105.0
+
+# Extra horizontal speed added when jumping from ground. 
+@export var JUMP_H_BOOST = 40.0
+
+# Time holding jump that keeps upward speed clamped to JUMP_SPEED.
+@export var VAR_JUMP_TIME = 0.2
+
+# Time after walking off a ledge a jump still registers.
+@export var JUMP_GRACE_TIME = 0.1
+
+# Max horizontal speed. 
+@export var MAX_RUN = 90.0
+
+# Acceleration toward MAX_RUN on ground.
+@export var RUN_ACCEL = 1000.0
+
+# Deceleration when above MAX_RUN.
+@export var RUN_REDUCE = 400.0
+
+# Multiplier on RUN_ACCEL / RUN_REDUCE while airborne
+@export var AIR_MULT = 0.65
+
+# Max horizontal speed while carrying something If we include carrying idk
+@export var HOLDING_MAX_RUN = 70.0
+
+# Friction on ground while ducking. If we include ducking idk
+@export var DUCK_FRICTION = 500.0
+
+
+var jump_grace_timer = 0.0
+var var_jump_timer= 0.0
+var var_jump_speed = 0.0
+var max_fall_current = MAX_FALL
+var was_on_ground = false
+
+
+func _physics_process(delta) -> void:
+	# timers 
+	jump_grace_timer = maxf(jump_grace_timer - delta, 0.0)
+	var_jump_timer = maxf(var_jump_timer - delta, 0.0)
+
+	# coyote
 	if is_on_floor():
-		fall_time = 0
-		if down_pressed-1 >= 1:
-			down_pressed-=1
-		just_fell = false
-	
-	if not is_on_floor():
-		if fall_time+1 <= seconds_to_phys_frames(FALL_TIME_MAX):
-			fall_time += 1
-		velocity.y = GRAVITY * fall_time*FALL_TIME_MULT * delta * (down_pressed*DOWN_PRESS_MULT)
-	# Handle jump.
-	if Input.is_action_just_pressed("player_jump") and (is_on_floor() or current_coyote > 0) and just_fell == false:
-		velocity.y -= JUMP_VELOCITY
-		
-		just_fell = true;
-	
-	if(just_fell) and Input.is_action_pressed("player_jump") and fall_time <= seconds_to_phys_frames(JUMP_HOLD_MAX):
-		velocity.y -= JUMP_HOLD_VELOCITY
-	
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
-	var direction := Input.get_axis("player_left", "player_right")
-	if direction:
-		if walk_time+1 <= seconds_to_phys_frames(WALK_TIME_MAX):
-			walk_time += 1
-		velocity.x = direction * clamp(walk_time*WALK_SPEED_MULT, 0, WALK_SPEED_MAX)
+		jump_grace_timer = JUMP_GRACE_TIME
 	else:
-		walk_time = 0
-		velocity.x = move_toward(velocity.x, 0, DECELERATION_SPEED)
+		jump_grace_timer = maxf(jump_grace_timer - delta, 0.0)
 
+
+	was_on_ground = is_on_floor()
+
+	# horizontal
+	var direction = Input.get_axis("player_left", "player_right")
+	var max_run = MAX_RUN
+	var mult = 1.0 if is_on_floor() else AIR_MULT
+
+	if absf(velocity.x) > max_run and signf(velocity.x) == direction:
+		velocity.x = move_toward(velocity.x, max_run * direction, RUN_REDUCE * mult * delta)
+	else:
+		velocity.x = move_toward(velocity.x, max_run * direction, RUN_ACCEL * mult * delta)
+
+	# vertical
+	max_fall_current = move_toward(max_fall_current, MAX_FALL, FAST_MAX_ACCEL * delta)
+
+	# fast-fall
+	if Input.is_action_pressed("player_down") and velocity.y >= MAX_FALL:
+		max_fall_current = move_toward(max_fall_current, FAST_MAX_FALL, FAST_MAX_ACCEL * delta)
+
+	# gravity
+	if not is_on_floor():
+		var grav_mult = 1.0
+		if absf(velocity.y) < HALF_GRAV_THRESHOLD and Input.is_action_pressed("player_jump"):
+			grav_mult = 0.5
+		velocity.y = move_toward(velocity.y, max_fall_current, GRAVITY * grav_mult * delta)
+
+	# jump
+	if var_jump_timer > 0.0:
+		if Input.is_action_pressed("player_jump"):
+			velocity.y = minf(velocity.y, var_jump_speed)
+		else:
+			var_jump_timer = 0.0
+
+	if Input.is_action_just_pressed("player_jump"):
+		if jump_grace_timer > 0.0:
+			_jump()
 
 	move_and_slide()
 
-func seconds_to_phys_frames(seconds):
-	return seconds * 60
+
+func _jump() -> void:
+	jump_grace_timer = 0.0
+	var_jump_timer = VAR_JUMP_TIME
+	var_jump_speed = JUMP_SPEED
+	velocity.y = JUMP_SPEED
+	velocity.x += JUMP_H_BOOST * Input.get_axis("player_left", "player_right")
