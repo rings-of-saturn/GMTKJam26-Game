@@ -45,7 +45,6 @@ func _physics_process(delta: float) -> void:
 		if fall_time+1 <= seconds_to_phys_frames(FALL_TIME_MAX):
 			fall_time += 1
 		velocity.y = GRAVITY * fall_time*FALL_TIME_MULT * delta * (down_pressed*DOWN_PRESS_MULT)
-	# Handle jump.
 	if Input.is_action_just_pressed("player_jump") and (is_on_floor() or current_coyote > 0) and just_fell == false:
 		velocity.y -= JUMP_VELOCITY
 		
@@ -54,8 +53,6 @@ func _physics_process(delta: float) -> void:
 	if(just_fell) and Input.is_action_pressed("player_jump") and fall_time <= seconds_to_phys_frames(JUMP_HOLD_MAX):
 		velocity.y -= JUMP_HOLD_VELOCITY
 	
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction := Input.get_axis("player_left", "player_right")
 	if direction:
 		if walk_time+1 <= seconds_to_phys_frames(WALK_TIME_MAX):
