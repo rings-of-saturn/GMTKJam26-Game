@@ -45,13 +45,12 @@ extends CharacterBody2D
 # Friction on ground while ducking. If we include ducking idk
 @export var DUCK_FRICTION = 500.0
 
-
 var jump_grace_timer = 0.0
 var var_jump_timer= 0.0
 var var_jump_speed = 0.0
 var max_fall_current = MAX_FALL
 var was_on_ground = false
-
+@onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 
 func _physics_process(delta) -> void:
 	# timers 
@@ -103,6 +102,16 @@ func _physics_process(delta) -> void:
 			_jump()
 
 	move_and_slide()
+	
+	#player direction(sprite)
+	if(direction == 1):
+		sprite.flip_h = true
+	elif(direction == -1):
+		sprite.flip_h = false
+	if(direction):
+		sprite.animation = "walk"
+	else:
+		sprite.animation = "idle"
 
 
 func _jump() -> void:
