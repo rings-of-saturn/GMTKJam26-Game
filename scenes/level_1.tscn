@@ -1,9 +1,9 @@
 [gd_scene format=4 uid="uid://4efetdk8g1qm"]
 
-[ext_resource type="Texture2D" uid="uid://bpnvlyl3ykgd5" path="res://assets/palletes/blank/blank.png" id="1_errlg"]
+[ext_resource type="Texture2D" uid="uid://bpnvlyl3ykgd5" path="res://assets/palletes/blank/blank.png" id="1_014kd"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tbgi4"]
-texture = ExtResource("1_errlg")
+texture = ExtResource("1_014kd")
 texture_region_size = Vector2i(8, 8)
 0:0/0 = 0
 0:0/0/terrain_set = 0
