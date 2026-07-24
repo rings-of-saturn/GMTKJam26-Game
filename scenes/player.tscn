@@ -92,13 +92,6 @@ animations = [{
 
 [node name="Player" type="CharacterBody2D" unique_id=465695460]
 script = ExtResource("1_onrkg")
-JUMP_VELOCITY = 2000
-JUMP_HOLD_VELOCITY = 240
-GRAVITY = 400
-DOWN_PRESS_MULT = 0.05
-FALL_TIME_MULT = 8
-FALL_TIME_MAX = 6
-WALK_TIME_MAX = 2.0
 metadata/_edit_group_ = true
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1538076048]
@@ -109,5 +102,5 @@ shape = SubResource("RectangleShape2D_0wfyh")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=357497187]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_enspi")
-animation = &"walk"
-frame_progress = 0.44248343
+animation = &"idle"
+autoplay = "idle"
