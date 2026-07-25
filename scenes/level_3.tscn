@@ -171,6 +171,7 @@ sources/0 = SubResource("TileSetAtlasSource_ah8om")
 
 [node name="Level3" type="Node2D" unique_id=601881982]
 script = ExtResource("1_uwxec")
+granted_cards = Array[int]([2, 3, 1])
 routes = {
 0: 0,
 1: 1,

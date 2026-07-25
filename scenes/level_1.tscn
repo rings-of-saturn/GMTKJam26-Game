@@ -171,6 +171,7 @@ size = Vector2(8, 24)
 
 [node name="Level 1" type="Node2D" unique_id=1652856812]
 script = ExtResource("1_bswci")
+granted_cards = Array[int]([])
 
 [node name="Tile Map" type="TileMapLayer" parent="." unique_id=2044206089]
 texture_filter = 1

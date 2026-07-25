@@ -17,45 +17,37 @@ signal second_card_used
 signal third_card_used
 
 func _ready() -> void:
-	pass # Replace with function body.
-
+	first_sprite.texture = current_first_card
+	second_sprite.texture = current_second_card
+	third_sprite.texture = current_third_card
+	_update_visibility()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	#TODO: make cards easy to enable and disable
-	enabled_cards.append(1)
-	enabled_cards.append(2)
-	
-	current_second_card = CARD_SPEED;
-	
-	
-	if not enabled_cards.has(1):
-		first_sprite.visible = false
-	if not enabled_cards.has(2):
-		second_sprite.visible = false
-	if not enabled_cards.has(3):
-		third_sprite.visible = false
-	first_sprite.texture = current_first_card;
-	second_sprite.texture = current_second_card;
-	third_sprite.texture = current_third_card;
+func _process(_delta: float) -> void:
 	if enabled_cards.has(1):
-		if Input.is_action_pressed("player_ability_1"):
-			print("holding first card")
 		if Input.is_action_just_released("player_ability_1"):
-			print("used first card")
 			first_card_used.emit(current_first_card)
-	
 	if enabled_cards.has(2):
-		if Input.is_action_pressed("player_ability_2"):
-			print("holding second card")
 		if Input.is_action_just_released("player_ability_2"):
-			print("used second card")
 			second_card_used.emit(current_second_card)
-	
 	if enabled_cards.has(3):
-		if Input.is_action_pressed("player_ability_3"):
-			print("holding third card")
 		if Input.is_action_just_released("player_ability_3"):
-			print("used third card")
 			third_card_used.emit(current_third_card)
 	
+
+
+func enable_card(card_id: int) -> void:
+	if not enabled_cards.has(card_id):
+		enabled_cards.append(card_id)
+		_update_visibility()
+
+
+func disable_card(card_id: int) -> void:
+	enabled_cards.erase(card_id)
+	_update_visibility()
+
+
+func _update_visibility() -> void:
+	first_sprite.visible = enabled_cards.has(1)
+	second_sprite.visible = enabled_cards.has(2)
+	third_sprite.visible = enabled_cards.has(3)

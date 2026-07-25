@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://b4joik28uw6ro" path="res://assets/animations/player/player_walk.png" id="3_dqkch"]
 [ext_resource type="Texture2D" uid="uid://d1p1lmk42ojej" path="res://assets/animations/player/player_flying.png" id="4_y4r1p"]
 [ext_resource type="Texture2D" uid="uid://c1ah3gd0me4va" path="res://assets/animations/player/player_jump.png" id="6_d2wvv"]
+[ext_resource type="Script" uid="uid://smd0l48qhvw4" path="res://scripts/abilities/dash_component.gd" id="7_fjrip"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0wfyh"]
 size = Vector2(7.5, 12)
@@ -192,3 +193,6 @@ autoplay = "idle"
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=474870215]
 zoom = Vector2(4.5, 4.5)
+
+[node name="DashComponent" type="Node2D" parent="." unique_id=577402755]
+script = ExtResource("7_fjrip")

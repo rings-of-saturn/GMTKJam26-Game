@@ -60,13 +60,13 @@ func _physics_process(delta) -> void:
 	
 	#crouch
 	if Input.is_action_pressed("player_down") and is_on_floor() and not crouching:
-		collision_shape.shape.size.y = 8
-		collision_shape.position.y = 2
+		collision_shape.shape.size = Vector2(7.5, 8)
+		collision_shape.position = Vector2(0, 2)
 		crouching = true
-	if not Input.is_action_pressed("player_down"):
-		collision_shape.shape.size.y = 12
-		collision_shape.position.y = 0
-		crouching = false;
+	if not Input.is_action_pressed("player_down") and crouching:
+		collision_shape.shape.size = Vector2(7.5, 12)
+		collision_shape.position = Vector2(0, 0)
+		crouching = false
 		
 
 	# timers 
@@ -129,7 +129,7 @@ func _physics_process(delta) -> void:
 		sprite.animation = "crouch"
 		if(sprite.frame == 3):
 			sprite.frame = 3
-	elif(var_jump_timer < 0):
+	elif not is_on_floor() and velocity.y < 0:
 		sprite.animation = "jump"
 	elif not is_on_floor():
 		sprite.animation = "flying"

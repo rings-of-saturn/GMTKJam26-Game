@@ -93,16 +93,5 @@ func _on_timer_expired() -> void:
 	restart_level()
 
 
-func _on_scene_changed(_scene: Node) -> void:
-	await get_tree().process_frame
-
-	var slots := get_tree().get_nodes_in_group("level_slot")
-	if slots.size() == 0:
-		return
-
-	level_slot = slots[0]
-	load_level(0)
-
-
 func _on_game_complete() -> void:
 	print("GAME COMPLETE")

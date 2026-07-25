@@ -1,5 +1,10 @@
 extends Node2D
 
+
+@export var granted_cards: Array[int] = [2]
+@export var removed_cards: Array[int] = []
+
+
 ## Map goal_id → level_index.
 ## Leave empty for linear progression (defaults to next level).
 @export var routes: Dictionary = {
@@ -8,8 +13,24 @@ extends Node2D
 }
 
 func _ready() -> void:
+	_grant_cards()
 	for child in _find_goal_areas(self):
 		child.goal_reached.connect(_on_goal_reached)
+
+
+
+
+func _grant_cards() -> void:
+	var player := get_node("../../Player") as CharacterBody2D
+	if not player:
+		return
+	var cards := player.get_node_or_null("Cards")
+	if not cards:
+		return
+	for cid: int in granted_cards:
+		cards.enable_card(cid)
+	for cid: int in removed_cards:
+		cards.disable_card(cid)
 
 
 func _on_goal_reached(gid: int) -> void:
