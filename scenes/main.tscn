@@ -19,8 +19,6 @@ texture = ExtResource("4_jyhfs")
 stretch_mode = 1
 metadata/_edit_lock_ = true
 
-[node name="Player" parent="." unique_id=465695460 instance=ExtResource("1_0wfyh")]
-
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1602509510]
 position = Vector2(2, -32)
 zoom = Vector2(5, 5)
@@ -28,3 +26,5 @@ zoom = Vector2(5, 5)
 [node name="Countdown" parent="." unique_id=1833679629 instance=ExtResource("3_sugp2")]
 
 [node name="LevelSlot" type="Node2D" parent="." unique_id=748519354 groups=["level_slot"]]
+
+[node name="Player" parent="." unique_id=465695460 instance=ExtResource("1_0wfyh")]
