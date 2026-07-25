@@ -1,8 +1,5 @@
 extends Node
 
-signal level_loading(index: int)
-signal level_loaded(index: int)
-
 enum GameState {
 	PLAYING,
 	LEVEL_COMPLETE,
