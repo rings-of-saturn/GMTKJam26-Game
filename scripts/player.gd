@@ -47,14 +47,27 @@ extends CharacterBody2D
 
 var jump_grace_timer = 0.0
 var var_jump_timer= 0.0
+var crouching = false;
 var var_jump_speed = 0.0
 var max_fall_current = MAX_FALL
 var was_on_ground = false
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
+@onready var collision_shape: CollisionShape2D = $CollisionShape2D
 
 func _physics_process(delta) -> void:
 	if LevelManager.state != LevelManager.GameState.PLAYING:
 		return
+	
+	#crouch
+	if Input.is_action_pressed("player_down") and is_on_floor() and not crouching:
+		collision_shape.shape.size.y = 8
+		collision_shape.position.y = 2
+		crouching = true
+	if not Input.is_action_pressed("player_down"):
+		collision_shape.shape.size.y = 12
+		collision_shape.position.y = 0
+		crouching = false;
+		
 
 	# timers 
 	var_jump_timer = maxf(var_jump_timer - delta, 0.0)
@@ -112,9 +125,16 @@ func _physics_process(delta) -> void:
 		sprite.flip_h = false
 	if(direction):
 		sprite.animation = "walk"
+	elif(crouching):
+		sprite.animation = "crouch"
+		if(sprite.frame == 3):
+			sprite.frame = 3
+	elif(var_jump_timer < 0):
+		sprite.animation = "jump"
+	elif not is_on_floor():
+		sprite.animation = "flying"
 	else:
 		sprite.animation = "idle"
-
 
 func _jump() -> void:
 	jump_grace_timer = 0.0
