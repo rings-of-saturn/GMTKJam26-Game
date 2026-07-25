@@ -53,8 +53,10 @@ var was_on_ground = false
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 
 func _physics_process(delta) -> void:
+	if LevelManager.state != LevelManager.GameState.PLAYING:
+		return
+
 	# timers 
-	jump_grace_timer = maxf(jump_grace_timer - delta, 0.0)
 	var_jump_timer = maxf(var_jump_timer - delta, 0.0)
 
 	# coyote

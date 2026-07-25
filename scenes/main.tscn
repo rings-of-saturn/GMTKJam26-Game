@@ -27,6 +27,4 @@ zoom = Vector2(5, 5)
 
 [node name="Countdown" parent="." unique_id=1833679629 instance=ExtResource("3_sugp2")]
 
-[node name="LevelSlot" type="Node2D" parent="." unique_id=748519354]
-
-[node name="Level 1" parent="LevelSlot" unique_id=1652856812]
+[node name="LevelSlot" type="Node2D" parent="." unique_id=748519354 groups=["level_slot"]]
