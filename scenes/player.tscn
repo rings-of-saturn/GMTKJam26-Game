@@ -180,7 +180,6 @@ animations = [{
 
 [node name="Player" type="CharacterBody2D" unique_id=465695460]
 script = ExtResource("1_onrkg")
-metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=877902241]
 shape = SubResource("RectangleShape2D_0wfyh")
@@ -190,3 +189,6 @@ texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_enspi")
 animation = &"crouch"
 autoplay = "idle"
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=474870215]
+zoom = Vector2(4.5, 4.5)

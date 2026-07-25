@@ -13,7 +13,7 @@ func _ready() -> void:
 func _on_time_changed(remaining) -> void:
 	var minutes = remaining / 60
 	var seconds = remaining % 60
-	_label.text = "%02d:%02d" % [minutes, seconds]
+	_label.text = "[color=red]%02d:%02d" % [minutes, seconds]
 
 func _on_timer_timeout() -> void:
 	pass  # kept so the scene Timer node doesn't error;

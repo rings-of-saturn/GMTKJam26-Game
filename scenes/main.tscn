@@ -4,6 +4,8 @@
 [ext_resource type="Script" uid="uid://ddss2h3suqofg" path="res://scripts/level.gd" id="1_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://dv8bgcny7c665" path="res://scenes/countdown.tscn" id="3_sugp2"]
 [ext_resource type="Texture2D" uid="uid://belmmr1tgmqw7" path="res://assets/backgrounds/blank/blank_bg.png" id="4_jyhfs"]
+[ext_resource type="Script" uid="uid://bowgfk4qntj1l" path="res://scenes/card_manager.gd" id="5_tbgi4"]
+[ext_resource type="Texture2D" uid="uid://8pd88rktly3w" path="res://assets/cards/card_base.png" id="6_tefeu"]
 
 [node name="Node2D" type="Node2D" unique_id=1530755968]
 texture_filter = 1
@@ -19,12 +21,26 @@ texture = ExtResource("4_jyhfs")
 stretch_mode = 1
 metadata/_edit_lock_ = true
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1602509510]
-position = Vector2(2, -32)
-zoom = Vector2(5, 5)
-
-[node name="Countdown" parent="." unique_id=1833679629 instance=ExtResource("3_sugp2")]
-
 [node name="LevelSlot" type="Node2D" parent="." unique_id=748519354 groups=["level_slot"]]
 
 [node name="Player" parent="." unique_id=465695460 instance=ExtResource("1_0wfyh")]
+
+[node name="Cards" type="Node2D" parent="Player" unique_id=480875657]
+position = Vector2(106, 45)
+script = ExtResource("5_tbgi4")
+
+[node name="Card 1" type="Sprite2D" parent="Player/Cards" unique_id=906234262]
+position = Vector2(8, -1)
+texture = ExtResource("6_tefeu")
+
+[node name="Card 2" type="Sprite2D" parent="Player/Cards" unique_id=830414077]
+rotation = -0.34906584
+texture = ExtResource("6_tefeu")
+
+[node name="Card 3" type="Sprite2D" parent="Player/Cards" unique_id=985409801]
+position = Vector2(-7, 5)
+rotation = -0.7853982
+texture = ExtResource("6_tefeu")
+
+[node name="Countdown" parent="Player" unique_id=1833679629 instance=ExtResource("3_sugp2")]
+position = Vector2(0, -45)
