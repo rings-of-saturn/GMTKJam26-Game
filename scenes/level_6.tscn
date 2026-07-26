@@ -346,7 +346,6 @@ size = Vector2(8, 54)
 
 [node name="Level6" type="Node2D" unique_id=601881982]
 script = ExtResource("1_4t8k6")
-granted_cards = Array[int]([1, 2])
 time_limit = 25
 
 [node name="Bg2" type="Sprite2D" parent="." unique_id=380048921]
