@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="DialogueLine" format=3 uid="uid://bcngfnmmehxh7"]
+
+[ext_resource type="Script" uid="uid://ppxj4vyr0l6u" path="res://scripts/dialogues/dialogue_line.gd" id="1_w8tr4"]
+
+[resource]
+script = ExtResource("1_w8tr4")
+character_name = "Dev"
+text = "[color=yellow]Dev log, whatever. I don’t think I can do this without literally frying any kind of… anything?"
+metadata/_custom_type_script = "uid://ppxj4vyr0l6u"

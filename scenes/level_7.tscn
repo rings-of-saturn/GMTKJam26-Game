@@ -9,6 +9,9 @@
 [ext_resource type="Resource" uid="uid://ceefslyuma0ax" path="res://assets/dialogues/7/Level7.tres" id="6_ci1vt"]
 [ext_resource type="Script" uid="uid://hibdip53pe7j" path="res://scripts/goal_area.gd" id="7_ci1vt"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fidgd"]
+size = Vector2(15, 19)
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ah8om"]
 texture = ExtResource("2_ci1vt")
 texture_region_size = Vector2i(8, 8)
@@ -338,9 +341,6 @@ sources/1 = SubResource("TileSetAtlasSource_p6vls")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wae8j"]
 size = Vector2(20, 162)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_fidgd"]
-size = Vector2(15, 19)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ophlp"]
 size = Vector2(8, 54)
 
@@ -348,6 +348,16 @@ size = Vector2(8, 54)
 script = ExtResource("1_v7yg4")
 granted_cards = Array[int]([2, 1])
 time_limit = 50
+
+[node name="Dialogue Trigger2" type="Area2D" parent="." unique_id=996081628]
+position = Vector2(791, -641)
+script = ExtResource("5_fsh38")
+dialogue = ExtResource("3_wu5f3")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Dialogue Trigger2" unique_id=982735052]
+position = Vector2(16.5, 6.5)
+shape = SubResource("RectangleShape2D_fidgd")
 
 [node name="Tile Map" type="TileMapLayer" parent="." unique_id=1196869407]
 texture_filter = 1
@@ -369,16 +379,6 @@ shape = SubResource("RectangleShape2D_wae8j")
 [node name="falling_2x6_1" type="Node2D" parent="." unique_id=827359092]
 position = Vector2(-157, 9)
 metadata/_edit_group_ = true
-
-[node name="Dialogue Trigger2" type="Area2D" parent="falling_2x6_1" unique_id=996081628]
-position = Vector2(948, -650)
-script = ExtResource("5_fsh38")
-dialogue = ExtResource("3_wu5f3")
-metadata/_edit_group_ = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="falling_2x6_1/Dialogue Trigger2" unique_id=982735052]
-position = Vector2(16.5, 6.5)
-shape = SubResource("RectangleShape2D_fidgd")
 
 [node name="DefaultFallingTile" parent="falling_2x6_1" unique_id=1075722321 instance=ExtResource("4_wu5f3")]
 position = Vector2(783, -483)

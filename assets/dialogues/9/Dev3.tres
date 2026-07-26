@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="DialogueLine" format=3 uid="uid://c1r0km7was22k"]
+
+[ext_resource type="Script" uid="uid://ppxj4vyr0l6u" path="res://scripts/dialogues/dialogue_line.gd" id="1_dsah7"]
+
+[resource]
+script = ExtResource("1_dsah7")
+character_name = "Dev"
+text = "[color=yellow]Why won’t they just let me GIVE UP? I already worked so hard, I’ve done EVERYTHING asked... "
+metadata/_custom_type_script = "uid://ppxj4vyr0l6u"

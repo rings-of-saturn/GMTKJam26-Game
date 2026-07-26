@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="DialogueLine" format=3 uid="uid://cw0fy4gub768w"]
+
+[ext_resource type="Script" uid="uid://ppxj4vyr0l6u" path="res://scripts/dialogues/dialogue_line.gd" id="1_ufbat"]
+
+[resource]
+script = ExtResource("1_ufbat")
+character_name = "Dev"
+text = "[color=yellow]I don’t know, I can’t do this but what other choice do I have??"
+metadata/_custom_type_script = "uid://ppxj4vyr0l6u"
