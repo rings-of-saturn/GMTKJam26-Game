@@ -1,6 +1,7 @@
 [gd_scene format=4 uid="uid://dalg5t0cdv2mw"]
 
 [ext_resource type="Script" uid="uid://cxv3spd254hdf" path="res://scripts/level_data.gd" id="1_qsmat"]
+[ext_resource type="Texture2D" uid="uid://pefcxo0be3l1" path="res://assets/bgs/bg_1.png" id="2_cp0rv"]
 [ext_resource type="Texture2D" uid="uid://bpnvlyl3ykgd5" path="res://assets/palletes/blank/blank.png" id="2_yk4f3"]
 [ext_resource type="Texture2D" uid="uid://bo2ne2m5f3w78" path="res://assets/palletes/grassy.png" id="3_cp0rv"]
 [ext_resource type="Script" uid="uid://c3wsqtduobx7l" path="res://scripts/dialogue_trigger.gd" id="5_ycko3"]
@@ -348,6 +349,10 @@ size = Vector2(8, 54)
 [node name="Level4" type="Node2D" unique_id=601881982]
 script = ExtResource("1_qsmat")
 time_limit = 40
+
+[node name="Bg1" type="Sprite2D" parent="." unique_id=716944913]
+position = Vector2(739, -552)
+texture = ExtResource("2_cp0rv")
 
 [node name="Tile Map" type="TileMapLayer" parent="." unique_id=1196869407]
 texture_filter = 1
