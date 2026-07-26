@@ -8,7 +8,7 @@ signal dialogue_finished()
 @onready var portrait: TextureRect = $MarginContainer/MarginContainer/HBoxContainer/Portrait
 @onready var indicator: RichTextLabel = $MarginContainer/MarginContainer/HBoxContainer/ContinueIndicator
 
-const DEV_TALK_SPRITE = preload("uid://02igcrchlbce")
+const DEV_TALK_SPRITE = preload("uid://3wb0sjf1s5au")
 const PLAYER_TALK_SPRITE = preload("uid://dtdmngby5meus")
 
 

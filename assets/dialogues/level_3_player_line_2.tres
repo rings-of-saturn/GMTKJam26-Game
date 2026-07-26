@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="DialogueLine" format=3 uid="uid://bomhx2dwl6jp8"]
+
+[ext_resource type="Script" uid="uid://ppxj4vyr0l6u" path="res://scripts/dialogues/dialogue_line.gd" id="1_qhtwb"]
+
+[resource]
+script = ExtResource("1_qhtwb")
+character_name = "player"
+text = "..huh? Calm down, you got this!"
+delay_before = 0.75
+text_speed = 0.03
+metadata/_custom_type_script = "uid://ppxj4vyr0l6u"

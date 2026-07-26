@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="DialogueLine" format=3 uid="uid://dvsuiuitvqkhb"]
+
+[ext_resource type="Script" uid="uid://ppxj4vyr0l6u" path="res://scripts/dialogues/dialogue_line.gd" id="1_3s700"]
+
+[resource]
+script = ExtResource("1_3s700")
+character_name = "player"
+text = "Phew, that was tiring! Sure am glad that wasn’t too bad, that was kinda fun actually!"
+delay_before = 0.0
+text_speed = 0.06
+metadata/_custom_type_script = "uid://ppxj4vyr0l6u"

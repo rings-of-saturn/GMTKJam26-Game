@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="DialogueLine" format=3 uid="uid://cxhtiwoc16d7y"]
+
+[ext_resource type="Script" uid="uid://ppxj4vyr0l6u" path="res://scripts/dialogues/dialogue_line.gd" id="1_ckbqi"]
+
+[resource]
+script = ExtResource("1_ckbqi")
+character_name = "dev"
+text = "but I’m worried about the time crunch. I think the deadline should be achievable, though?"
+delay_before = 0.0
+text_speed = 0.06
+metadata/_custom_type_script = "uid://ppxj4vyr0l6u"

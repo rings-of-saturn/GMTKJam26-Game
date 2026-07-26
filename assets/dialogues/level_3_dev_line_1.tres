@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="DialogueLine" format=3 uid="uid://cbpas3ej8mm5e"]
+
+[ext_resource type="Script" uid="uid://ppxj4vyr0l6u" path="res://scripts/dialogues/dialogue_line.gd" id="1_omgmv"]
+
+[resource]
+script = ExtResource("1_omgmv")
+character_name = "dev"
+text = "Dev. log. 1. I implemented half of the listed stuff, I think this is going pretty good"
+delay_before = 1.0
+text_speed = 0.06
+metadata/_custom_type_script = "uid://ppxj4vyr0l6u"

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://3wb0sjf1s5au"
-path="res://.godot/imported/dev_talk_sprite.png-abb0cd95b936571763fdca9856232936.ctex"
+uid="uid://b2b5t1wevncox"
+path="res://.godot/imported/grassy_falling.png-9ba8a9ab70e8ba7e83bb4055818c6fdc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/text/dev_talk_sprite.png"
-dest_files=["res://.godot/imported/dev_talk_sprite.png-abb0cd95b936571763fdca9856232936.ctex"]
+source_file="res://assets/palletes/grassy_falling.png"
+dest_files=["res://.godot/imported/grassy_falling.png-9ba8a9ab70e8ba7e83bb4055818c6fdc.ctex"]
 
 [params]
 
