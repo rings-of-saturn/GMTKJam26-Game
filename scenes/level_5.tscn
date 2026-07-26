@@ -381,3 +381,12 @@ metadata/_edit_group_ = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Goal Area" unique_id=2022558532]
 position = Vector2(6, -17)
 shape = SubResource("RectangleShape2D_ij176")
+
+[node name="Goal Area2" type="Area2D" parent="." unique_id=560312957]
+position = Vector2(973, -835)
+script = ExtResource("6_cynta")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Goal Area2" unique_id=1382066072]
+position = Vector2(6, -17)
+shape = SubResource("RectangleShape2D_ij176")
