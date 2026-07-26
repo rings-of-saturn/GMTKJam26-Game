@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("1_pvq0m")
-character_name = "player"
+character_name = "Player"
 text = "I’ve heard lots about this place, geez I hope the climb’s easier than what everyone said…"
 delay_before = 0.0
 text_speed = 0.02

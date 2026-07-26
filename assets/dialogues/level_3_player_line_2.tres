@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("1_qhtwb")
-character_name = "player"
+character_name = "Player"
 text = "..huh? Calm down, you got this!"
 delay_before = 0.75
 text_speed = 0.03

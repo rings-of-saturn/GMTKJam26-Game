@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("1_omgmv")
-character_name = "dev"
+character_name = "Dev"
 text = "Dev. log. 1. I implemented half of the listed stuff, I think this is going pretty good"
 delay_before = 1.0
 text_speed = 0.06

@@ -6,5 +6,5 @@
 script = ExtResource("1_kq6yt")
 character_name = "Player"
 text = "See, that wasn’t so bad, me! Those people weren’t kidding about this getting more stressful the farther up we go though. Hm…"
-text_speed = 0.1
+text_speed = 0.06
 metadata/_custom_type_script = "uid://ppxj4vyr0l6u"
