@@ -8,12 +8,6 @@ enum GameState {
 	# TODO Add future state ( CUTSCENE, PAUSED, DIALOG, GAME_OVER)
 }
 @export var level_list: Array[String] = [
-<<<<<<< HEAD
-	"res://scenes/level_4.tscn",
-	
-=======
-
->>>>>>> fba608966051f63b0f474f5c4fa1c22928049abc
 	"res://scenes/start_screen.tscn",
 	"res://scenes/level_1.tscn",
 	"res://scenes/level_2.tscn",
@@ -64,8 +58,14 @@ func load_level(index: int) -> void:
 	level_slot.add_child(current_level)
 	current_level.owner = level_slot.owner
 
-	time_limit = current_level.get("time_limit") if current_level.get("time_limit") else 120
-	StressManager.start(time_limit)
+	var val = current_level.get("time_limit")
+	time_limit = val if val != null else 120
+
+	if time_limit > 0:
+		StressManager.start(time_limit)
+	else:
+		StressManager.stop()
+		StressManager.time_changed.emit(0)
 	state = GameState.PLAYING
 	_spawn_player()
 

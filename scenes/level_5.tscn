@@ -345,7 +345,7 @@ size = Vector2(8, 54)
 
 [node name="Level5" type="Node2D" unique_id=601881982]
 script = ExtResource("1_wcwf6")
-time_limit = 180
+time_limit = 60
 
 [node name="Bg1" type="Sprite2D" parent="." unique_id=2113605213]
 position = Vector2(787, -577)

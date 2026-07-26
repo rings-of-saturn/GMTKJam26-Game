@@ -5,5 +5,5 @@
 [resource]
 script = ExtResource("1_fjol6")
 character_name = "Dev"
-text = "Got distracted making a ground pound ability... cost me so much but at least the player can press [Z] in order to ground slam, breaking fallen objects and making them boucne up higher..."
+text = "Got distracted making a ground pound ability... cost me so much but at least the player can press [Z] in order to ground slam, breaking fallen objects and making them bounce up higher..."
 metadata/_custom_type_script = "uid://ppxj4vyr0l6u"

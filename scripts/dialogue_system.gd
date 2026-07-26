@@ -15,6 +15,7 @@ const PLAYER_TALK_SPRITE = preload("uid://dtdmngby5meus")
 var queue: Array[DialogueLine] = []
 var index = 0
 var can_advance = false
+var was_timer_running: bool = false
 
 func _ready() -> void:
 	visible = false
@@ -58,7 +59,9 @@ func show_dialogue(set: DialogueSet) -> void:
 	index = 0
 	visible = true
 	LevelManager.state = LevelManager.GameState.DIALOG
-	StressManager.stop() 
+	was_timer_running = StressManager.running      
+	if was_timer_running:                             
+		StressManager.stop()
 	_show_line()
 
 
@@ -83,5 +86,6 @@ func _end_dialogue() -> void:
 	visible = false
 	queue.clear()
 	LevelManager.state = LevelManager.GameState.PLAYING
-	StressManager.start() 
+	if was_timer_running:                             
+		StressManager.start()
 	dialogue_finished.emit()
