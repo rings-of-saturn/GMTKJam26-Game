@@ -4,7 +4,6 @@ extends Node2D
 @export var granted_cards: Array[int] = [2]
 @export var removed_cards: Array[int] = []
 
-
 ## Map goal_id → level_index.
 ## Leave empty for linear progression (defaults to next level).
 @export var routes: Dictionary = {

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d1p1lmk42ojej"
-path="res://.godot/imported/player_flying.png-18e60880faea0a1b4ffaa6f97b9f2990.ctex"
+uid="uid://byrucbxd7gydt"
+path="res://.godot/imported/player_idle.png-c0ac26f1314c2c9aa79d3db9b8ffa702.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/animations/player/player_flying.png"
-dest_files=["res://.godot/imported/player_flying.png-18e60880faea0a1b4ffaa6f97b9f2990.ctex"]
+source_file="res://assets/animations/player_idle.png"
+dest_files=["res://.godot/imported/player_idle.png-c0ac26f1314c2c9aa79d3db9b8ffa702.ctex"]
 
 [params]
 

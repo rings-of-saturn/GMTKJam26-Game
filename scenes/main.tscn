@@ -6,6 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://belmmr1tgmqw7" path="res://assets/backgrounds/blank/blank_bg.png" id="4_jyhfs"]
 [ext_resource type="Script" uid="uid://bowgfk4qntj1l" path="res://scripts/card_manager.gd" id="5_tbgi4"]
 [ext_resource type="Texture2D" uid="uid://8pd88rktly3w" path="res://assets/cards/card_base.png" id="6_tefeu"]
+[ext_resource type="Texture2D" uid="uid://cq0v5wv1trxfn" path="res://assets/text/text_thingy.png" id="7_o6xl0"]
+[ext_resource type="Script" uid="uid://d15okb7ropj1q" path="res://scripts/dialogue_system.gd" id="7_tipki"]
 
 [node name="Node2D" type="Node2D" unique_id=1530755968]
 texture_filter = 1
@@ -43,4 +45,35 @@ rotation = -0.7853982
 texture = ExtResource("6_tefeu")
 
 [node name="Countdown" parent="Player" unique_id=1833679629 instance=ExtResource("3_sugp2")]
-position = Vector2(0, -45)
+position = Vector2(0, -40)
+
+[node name="Dialogue System" type="Node2D" parent="Player" unique_id=1934216459]
+position = Vector2(0, -46)
+script = ExtResource("7_tipki")
+text_display_remainder = 5
+
+[node name="TextureRect" type="TextureRect" parent="Player/Dialogue System" unique_id=1358663434]
+offset_left = -128.0
+offset_top = -26.0
+offset_right = 128.0
+offset_bottom = 14.0
+texture = ExtResource("7_o6xl0")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Player/Dialogue System" unique_id=819777042]
+offset_left = -90.0
+offset_top = -21.0
+offset_right = 122.0
+offset_bottom = 9.0
+theme_override_font_sizes/normal_font_size = 8
+theme_override_font_sizes/bold_font_size = 8
+theme_override_font_sizes/bold_italics_font_size = 8
+theme_override_font_sizes/italics_font_size = 8
+theme_override_font_sizes/mono_font_size = 8
+bbcode_enabled = true
+text = "Hello :> [color=red][b] MUAHAHAHA[/b][/color]
+uwu! [i]wHAT![/i] :< "
+scroll_active = false
+
+[node name="Sprite2D" type="Sprite2D" parent="Player/Dialogue System" unique_id=1167305397]
+position = Vector2(-108, -6)
+offset = Vector2(106, 4)
