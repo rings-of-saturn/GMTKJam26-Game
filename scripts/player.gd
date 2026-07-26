@@ -52,6 +52,7 @@ var var_jump_speed = 0.0
 var max_fall_current = MAX_FALL
 var was_on_ground = false
 var is_attacking = false
+var pre_move_velocity_y: float = 0.0
 
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var collision_shape: CollisionShape2D = $CollisionShape2D
@@ -61,6 +62,8 @@ func _physics_process(delta) -> void:
 	if LevelManager.state != LevelManager.GameState.PLAYING:
 		return
 	
+
+
 	#crouch
 	if Input.is_action_pressed("player_down") and is_on_floor() and not crouching:
 		collision_shape.shape.size = Vector2(7.5, 8)
@@ -110,14 +113,14 @@ func _physics_process(delta) -> void:
 
 	# jump
 	if var_jump_timer > 0.0:
-		if Input.is_action_pressed("player_jump"):
+		if Input.is_action_pressed("player_jump") and not is_attacking:
 			velocity.y = minf(velocity.y, var_jump_speed)
-		else:
-			var_jump_timer = 0.0
 
 	if Input.is_action_just_pressed("player_jump"):
 		if jump_grace_timer > 0.0:
 			_jump()
+
+	pre_move_velocity_y = velocity.y
 
 	move_and_slide()
 	

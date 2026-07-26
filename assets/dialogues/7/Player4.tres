@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="DialogueLine" format=3 uid="uid://b87b4jvfts7pk"]
+
+[ext_resource type="Script" uid="uid://ppxj4vyr0l6u" path="res://scripts/dialogues/dialogue_line.gd" id="1_3irle"]
+
+[resource]
+script = ExtResource("1_3irle")
+text = ".... Something’s very weird here. Eh, I think the altitude I’m at is just messing with my head a bit!"
+delay_before = 0.5
+metadata/_custom_type_script = "uid://ppxj4vyr0l6u"

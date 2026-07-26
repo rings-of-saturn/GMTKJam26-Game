@@ -5,7 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://bo2ne2m5f3w78" path="res://assets/palletes/grassy.png" id="3_hi6ks"]
 [ext_resource type="PackedScene" uid="uid://cvpnip2t2pecw" path="res://scenes/stress/default_falling_tile.tscn" id="4_ku6r7"]
 [ext_resource type="Script" uid="uid://c3wsqtduobx7l" path="res://scripts/dialogue_trigger.gd" id="5_6x5s0"]
-[ext_resource type="Resource" uid="uid://de2cdui2u328b" path="res://assets/dialogues/level_1.tres" id="6_uwnnm"]
+[ext_resource type="Resource" uid="uid://cfsmt7oqo5hdr" path="res://assets/dialogues/6/Level6.tres" id="6_uwnnm"]
+[ext_resource type="Script" uid="uid://hibdip53pe7j" path="res://scripts/goal_area.gd" id="7_fidgd"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ah8om"]
 texture = ExtResource("2_ku6r7")
@@ -339,8 +340,12 @@ size = Vector2(20, 162)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fidgd"]
 size = Vector2(18, 19)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_isi3j"]
+size = Vector2(8, 54)
+
 [node name="Level6" type="Node2D" unique_id=601881982]
 script = ExtResource("1_4t8k6")
+granted_cards = Array[int]([1, 2])
 time_limit = 25
 
 [node name="Tile Map" type="TileMapLayer" parent="." unique_id=1196869407]
@@ -350,7 +355,7 @@ tile_map_data = PackedByteArray("AAAzAMf/AQAFAAEAAAAzAMj/AQAFAAIAAAAzAMn/AQAEAAI
 tile_set = SubResource("TileSet_hhfj6")
 
 [node name="SpawnPoint" type="Marker2D" parent="." unique_id=851768500]
-position = Vector2(637, -378)
+position = Vector2(636, -372)
 
 [node name="barrier" type="StaticBody2D" parent="." unique_id=933485493]
 position = Vector2(593, -378)
@@ -437,7 +442,7 @@ breakable = false
 metadata/_edit_group_ = true
 
 [node name="Dialogue Trigger" type="Area2D" parent="." unique_id=1954101589]
-position = Vector2(623, -384)
+position = Vector2(621, -384)
 script = ExtResource("5_6x5s0")
 dialogue = ExtResource("6_uwnnm")
 metadata/_edit_group_ = true
@@ -485,3 +490,12 @@ position = Vector2(799, -491)
 trigger_phase = 0
 breakable = false
 metadata/_edit_group_ = true
+
+[node name="Goal Area" type="Area2D" parent="." unique_id=1989467124]
+position = Vector2(973, -467)
+script = ExtResource("7_fidgd")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Goal Area" unique_id=1835873687]
+position = Vector2(6, -17)
+shape = SubResource("RectangleShape2D_isi3j")

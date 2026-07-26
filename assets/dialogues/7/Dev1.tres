@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="DialogueLine" format=3 uid="uid://c1n6bbafrj43c"]
+
+[ext_resource type="Script" uid="uid://ppxj4vyr0l6u" path="res://scripts/dialogues/dialogue_line.gd" id="1_370lh"]
+
+[resource]
+script = ExtResource("1_370lh")
+character_name = "Dev"
+text = "[I’m not a writer, how to make it feel less generic...]"
+metadata/_custom_type_script = "uid://ppxj4vyr0l6u"

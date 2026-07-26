@@ -1,16 +1,18 @@
 extends Node
 
-enum PoundState { IDLE, ACTIVE, COOLDOWN }
+enum PoundState { IDLE, ACTIVE, COOLDOWN, LANDED }
 
-@export var pound_min_speed = 350.0      
-@export var pound_max_speed = 1200.0     
-@export var pound_extra_accel = 3000.0   
-@export var bounce_mult = 5
-@export var bounce_cap = -1000.0           
-@export var cooldown_time = 0.5           
+@export var pound_min_speed = 350.0
+@export var pound_max_speed = 1200.0
+@export var pound_extra_accel = 3000.0
+@export var bounce_mult = 0.2
+@export var bounce_cap = -30000.0
+@export var cooldown_time = 20
 
 var state: PoundState = PoundState.IDLE
 var cooldown_timer = 0.0
+var should_bounce = false
+var bounce_speed = 0.0
 
 @onready var player: CharacterBody2D = get_parent()
 @onready var cards: Node = player.get_node_or_null("Cards")
@@ -24,52 +26,43 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	cooldown_timer = maxf(cooldown_timer - delta, 0.0)
 
+	# Handle pending bounce BEFORE any physics this frame
+	if should_bounce:
+		print("[POUND] APPLYING BOUNCE: ", bounce_speed, " | velocity was: ", player.velocity.y)
+		should_bounce = false
+		player.velocity.y = bounce_speed
+		player.max_fall_current = player.MAX_FALL
+		player.is_attacking = false
+		state = PoundState.COOLDOWN
+		cooldown_timer = cooldown_time
+		return
+
 	if state != PoundState.ACTIVE:
 		return
 
 	player.max_fall_current = pound_max_speed
-
-	# Extra downward acceleration on top of normal gravity
 	player.velocity.y += pound_extra_accel * delta
 	if player.velocity.y > pound_max_speed:
 		player.velocity.y = pound_max_speed
 
-	await get_tree().physics_frame
-
-	if state != PoundState.ACTIVE:
-		return
-
+	# Landing — queue bounce for NEXT physics frame
 	if player.is_on_floor():
-		_on_landing()
-
+		var speed: float = player.pre_move_velocity_y  
+		bounce_speed = maxf(-speed * sqrt(bounce_mult), bounce_cap)
+		print("[POUND] LANDED! speed=", speed, " | bounce=", bounce_speed, " | mult=", bounce_mult)
+		should_bounce = true
+		state = PoundState.LANDED
 
 
 func _on_pound_used(_card_ref: Texture2D) -> void:
 	if player.is_on_floor():
-		return                              # only usable in air
+		return
 	if state == PoundState.COOLDOWN and cooldown_timer > 0.0:
-		return                              # cooldown active
+		return
 	if state == PoundState.ACTIVE:
-		return                              # already pounding
-
+		return
 	state = PoundState.ACTIVE
 	player.is_attacking = true
 
-	# Punch downward (keep existing speed if already faster)
 	if player.velocity.y < pound_min_speed:
 		player.velocity.y = pound_min_speed
-
-
-func _on_landing() -> void:
-
-	var speed := player.velocity.y
-	player.velocity.y = maxf(-speed * bounce_mult, bounce_cap)
-	player.max_fall_current = player.MAX_FALL
-	player.is_attacking = false
-
-	state = PoundState.COOLDOWN
-	cooldown_timer = cooldown_time
-
-	await get_tree().create_timer(cooldown_time).timeout
-	if state == PoundState.COOLDOWN:
-		state = PoundState.IDLE

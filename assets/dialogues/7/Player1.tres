@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="DialogueLine" format=3 uid="uid://swl7cmex5m5v"]
+
+[ext_resource type="Script" uid="uid://ppxj4vyr0l6u" path="res://scripts/dialogues/dialogue_line.gd" id="1_83jk0"]
+
+[resource]
+script = ExtResource("1_83jk0")
+text = "Landscape falling, odd. Ah well! Eh…"
+metadata/_custom_type_script = "uid://ppxj4vyr0l6u"
