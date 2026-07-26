@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://cvpnip2t2pecw" path="res://scenes/stress/default_falling_tile.tscn" id="7_g31h8"]
 [ext_resource type="Resource" uid="uid://bntur4n3uc02t" path="res://assets/dialogues/4/PlayerSet4_4.tres" id="7_qsmat"]
 [ext_resource type="Script" uid="uid://hibdip53pe7j" path="res://scripts/goal_area.gd" id="8_qsmat"]
+[ext_resource type="Resource" uid="uid://dsdqd1nnitxx6" path="res://assets/dialogues/4/Level4Helper.tres" id="9_yk4f3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ah8om"]
 texture = ExtResource("2_yk4f3")
@@ -339,7 +340,7 @@ sources/1 = SubResource("TileSetAtlasSource_p6vls")
 size = Vector2(20, 162)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qsmat"]
-size = Vector2(18, 19)
+size = Vector2(19, 19)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yk4f3"]
 size = Vector2(8, 54)
@@ -371,32 +372,38 @@ metadata/_edit_group_ = true
 
 [node name="DefaultFallingTile" parent="falling_2x3_1" unique_id=1075722321 instance=ExtResource("7_g31h8")]
 position = Vector2(783, -483)
-breakable = false
+flash_color = Color(0.3019608, 0.3019608, 0.3019608, 1)
+kills_player = true
 metadata/_edit_group_ = true
 
 [node name="DefaultFallingTile2" parent="falling_2x3_1" unique_id=1724548765 instance=ExtResource("7_g31h8")]
 position = Vector2(791, -483)
-breakable = false
+flash_color = Color(0.3019608, 0.3019608, 0.3019608, 1)
+kills_player = true
 metadata/_edit_group_ = true
 
 [node name="DefaultFallingTile3" parent="falling_2x3_1" unique_id=1690009896 instance=ExtResource("7_g31h8")]
 position = Vector2(799, -483)
-breakable = false
+flash_color = Color(0.3019608, 0.3019608, 0.3019608, 1)
+kills_player = true
 metadata/_edit_group_ = true
 
 [node name="DefaultFallingTile4" parent="falling_2x3_1" unique_id=354283961 instance=ExtResource("7_g31h8")]
 position = Vector2(783, -491)
-breakable = false
+flash_color = Color(0.3019608, 0.3019608, 0.3019608, 1)
+kills_player = true
 metadata/_edit_group_ = true
 
 [node name="DefaultFallingTile5" parent="falling_2x3_1" unique_id=773964960 instance=ExtResource("7_g31h8")]
 position = Vector2(791, -491)
-breakable = false
+flash_color = Color(0.3019608, 0.3019608, 0.3019608, 1)
+kills_player = true
 metadata/_edit_group_ = true
 
 [node name="DefaultFallingTile6" parent="falling_2x3_1" unique_id=1117296762 instance=ExtResource("7_g31h8")]
 position = Vector2(799, -491)
-breakable = false
+flash_color = Color(0.3019608, 0.3019608, 0.3019608, 1)
+kills_player = true
 metadata/_edit_group_ = true
 
 [node name="falling_2x3_2" type="Node2D" parent="." unique_id=575397694]
@@ -405,32 +412,38 @@ metadata/_edit_group_ = true
 
 [node name="DefaultFallingTile" parent="falling_2x3_2" unique_id=1389303679 instance=ExtResource("7_g31h8")]
 position = Vector2(783, -483)
-breakable = false
+flash_color = Color(0.3019608, 0.3019608, 0.3019608, 1)
+kills_player = true
 metadata/_edit_group_ = true
 
 [node name="DefaultFallingTile2" parent="falling_2x3_2" unique_id=1351724879 instance=ExtResource("7_g31h8")]
 position = Vector2(791, -483)
-breakable = false
+flash_color = Color(0.3019608, 0.3019608, 0.3019608, 1)
+kills_player = true
 metadata/_edit_group_ = true
 
 [node name="DefaultFallingTile3" parent="falling_2x3_2" unique_id=461609755 instance=ExtResource("7_g31h8")]
 position = Vector2(799, -483)
-breakable = false
+flash_color = Color(0.3019608, 0.3019608, 0.3019608, 1)
+kills_player = true
 metadata/_edit_group_ = true
 
 [node name="DefaultFallingTile4" parent="falling_2x3_2" unique_id=2090067068 instance=ExtResource("7_g31h8")]
 position = Vector2(783, -491)
-breakable = false
+flash_color = Color(0.3019608, 0.3019608, 0.3019608, 1)
+kills_player = true
 metadata/_edit_group_ = true
 
 [node name="DefaultFallingTile5" parent="falling_2x3_2" unique_id=2004568423 instance=ExtResource("7_g31h8")]
 position = Vector2(791, -491)
-breakable = false
+flash_color = Color(0.3019608, 0.3019608, 0.3019608, 1)
+kills_player = true
 metadata/_edit_group_ = true
 
 [node name="DefaultFallingTile6" parent="falling_2x3_2" unique_id=86316779 instance=ExtResource("7_g31h8")]
 position = Vector2(799, -491)
-breakable = false
+flash_color = Color(0.3019608, 0.3019608, 0.3019608, 1)
+kills_player = true
 metadata/_edit_group_ = true
 
 [node name="Dialogue Trigger" type="Area2D" parent="." unique_id=1452744088]
@@ -461,3 +474,13 @@ metadata/_edit_group_ = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Goal Area" unique_id=1753434296]
 position = Vector2(6, -17)
 shape = SubResource("RectangleShape2D_yk4f3")
+
+[node name="Dialogue Trigger3" type="Area2D" parent="." unique_id=1390343701]
+position = Vector2(742, -409)
+script = ExtResource("5_ycko3")
+dialogue = ExtResource("9_yk4f3")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Dialogue Trigger3" unique_id=1203248184]
+position = Vector2(14.5, 6.5)
+shape = SubResource("RectangleShape2D_qsmat")

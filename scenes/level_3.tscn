@@ -347,7 +347,7 @@ size = Vector2(8, 54)
 [node name="Level3" type="Node2D" unique_id=601881982]
 script = ExtResource("1_uwxec")
 granted_cards = Array[int]([2, 3, 1])
-time_limit = 60
+time_limit = 30
 
 [node name="SpawnPoint" type="Marker2D" parent="." unique_id=851768500]
 position = Vector2(636, -390)
@@ -390,31 +390,37 @@ shape = SubResource("RectangleShape2D_hhfj6")
 [node name="DefaultFallingTile" parent="." unique_id=1075722321 instance=ExtResource("6_p6vls")]
 position = Vector2(747, -493)
 breakable = false
+kills_player = true
 metadata/_edit_group_ = true
 
 [node name="DefaultFallingTile2" parent="." unique_id=1617931245 instance=ExtResource("6_p6vls")]
 position = Vector2(755, -493)
 breakable = false
+kills_player = true
 metadata/_edit_group_ = true
 
 [node name="DefaultFallingTile3" parent="." unique_id=552837747 instance=ExtResource("6_p6vls")]
 position = Vector2(763, -493)
 breakable = false
+kills_player = true
 metadata/_edit_group_ = true
 
 [node name="DefaultFallingTile4" parent="." unique_id=2055558369 instance=ExtResource("6_p6vls")]
 position = Vector2(747, -501)
 breakable = false
+kills_player = true
 metadata/_edit_group_ = true
 
 [node name="DefaultFallingTile5" parent="." unique_id=74769658 instance=ExtResource("6_p6vls")]
 position = Vector2(755, -501)
 breakable = false
+kills_player = true
 metadata/_edit_group_ = true
 
 [node name="DefaultFallingTile6" parent="." unique_id=536341638 instance=ExtResource("6_p6vls")]
 position = Vector2(763, -501)
 breakable = false
+kills_player = true
 metadata/_edit_group_ = true
 
 [node name="Goal Area" type="Area2D" parent="." unique_id=2093747744]

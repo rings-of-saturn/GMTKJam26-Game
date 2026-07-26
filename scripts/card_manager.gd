@@ -25,13 +25,13 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	if enabled_cards.has(1):
-		if Input.is_action_just_released("player_ability_1"):
+		if Input.is_action_just_pressed("player_ability_1"):
 			first_card_used.emit(current_first_card)
 	if enabled_cards.has(2):
-		if Input.is_action_just_released("player_ability_2"):
+		if Input.is_action_just_pressed("player_ability_2"):
 			second_card_used.emit(current_second_card)
 	if enabled_cards.has(3):
-		if Input.is_action_just_released("player_ability_3"):
+		if Input.is_action_just_pressed("player_ability_3"):
 			third_card_used.emit(current_third_card)
 	
 
