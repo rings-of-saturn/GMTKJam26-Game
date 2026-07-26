@@ -1,0 +1,4 @@
+class_name DialogueSet
+extends Resource
+
+@export var lines: Array[DialogueLine] = []

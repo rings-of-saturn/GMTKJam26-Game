@@ -1,44 +1,86 @@
 class_name DialogueSystem
-extends Node2D
+extends CanvasLayer
 
-@onready var text: RichTextLabel = $RichTextLabel
-@onready var sprite: TextureRect = $TextureRect
+signal dialogue_finished()
+
+@onready var name_label: RichTextLabel = $MarginContainer/MarginContainer/HBoxContainer/NameLabel
+@onready var text_label: RichTextLabel = $MarginContainer/MarginContainer/HBoxContainer/TextLabel
+@onready var portrait: TextureRect = $MarginContainer/MarginContainer/HBoxContainer/Portrait
+@onready var indicator: RichTextLabel = $MarginContainer/MarginContainer/HBoxContainer/ContinueIndicator
 
 const DEV_TALK_SPRITE = preload("uid://02igcrchlbce")
 const PLAYER_TALK_SPRITE = preload("uid://dtdmngby5meus")
 
-@export var text_display_remainder : int
-@export var text_fade_remainder : int
 
-var text_display_time : int
-var delay : int
-var i = 0
-var text_fade_time: int
+var queue: Array[DialogueLine] = []
+var index = 0
+var can_advance = false
 
-func _physics_process(delta: float) -> void:
-	if text_display_time < 0 and text_display_time-1 >= 0:
-		text_display_time-1
-	else:
-		visible = false
-		
-	if delay < 0 and delay-1 >= 0:
-		delay-1
-	else:
-		i+= 1
+func _ready() -> void:
+	visible = false
+	add_to_group("dialogue_system")
+
+func _input(event: InputEvent) -> void:
+	if not visible:
+		return
+	if event.is_action_pressed("player_ability_1") and can_advance:
+		get_viewport().set_input_as_handled()
+		_show_line()
 	
-func show_line(new_text : String, character_name : String):
-	visible = true
-	text_display_time = text_display_remainder * 60
-	text.text = new_text
-	print(text.text)
+func _show_line():
+	if index >= queue.size():
+		_end_dialogue()
+		return
 
-func show_dialogue(dialogue : DialogueLine):
-	if(delay == 0) and i+1 <= dialogue.text.size():
-		show_line(dialogue.text[i], dialogue.character_name[i])
-		delay = text_display_remainder + dialogue.delay[i]
+	var line := queue[index]
+	can_advance = false
+	indicator.hide()
+
+	name_label.text = line.character_name
+	portrait.texture = name_to_sprite(line.character_name)
+	text_label.text = ""  
+	await get_tree().create_timer(line.delay_before).timeout
+	await _type_text(line.text, line.text_speed)
+
+	can_advance = true
+	index += 1
+
+	if line.auto_advance > 0.0:
+		indicator.show()
+		await get_tree().create_timer(line.auto_advance).timeout
+		if can_advance:
+			_show_line()
+	else:
+		indicator.show()
+
+func show_dialogue(set: DialogueSet) -> void:
+	queue = set.lines.duplicate()
+	index = 0
+	visible = true
+	LevelManager.state = LevelManager.GameState.DIALOG
+	StressManager.stop() 
+	_show_line()
+
+
+
+func _type_text(text: String, speed: float) -> void:
+	text_label.text = ""
+	for ch in text:
+		text_label.text += ch
+		await get_tree().create_timer(speed).timeout
 
 func name_to_sprite(character_name : String):
-	if character_name.to_lower() == "dev":
-		return DEV_TALK_SPRITE
-	if character_name.to_lower() == "player":
-		return PLAYER_TALK_SPRITE
+	match character_name.to_lower():
+		"dev":
+			return DEV_TALK_SPRITE
+		"player":
+			return PLAYER_TALK_SPRITE
+	return DEV_TALK_SPRITE
+
+
+func _end_dialogue() -> void:
+	visible = false
+	queue.clear()
+	LevelManager.state = LevelManager.GameState.PLAYING
+	StressManager.start() 
+	dialogue_finished.emit()

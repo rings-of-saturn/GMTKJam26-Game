@@ -8,10 +8,79 @@
 [ext_resource type="Texture2D" uid="uid://8pd88rktly3w" path="res://assets/cards/card_base.png" id="6_tefeu"]
 [ext_resource type="Texture2D" uid="uid://cq0v5wv1trxfn" path="res://assets/text/text_thingy.png" id="7_o6xl0"]
 [ext_resource type="Script" uid="uid://d15okb7ropj1q" path="res://scripts/dialogue_system.gd" id="7_tipki"]
+[ext_resource type="Script" uid="uid://7vu8mpl5g3po" path="res://scripts/effects/vignette.gd" id="9_85g3d"]
 
 [node name="Node2D" type="Node2D" unique_id=1530755968]
 texture_filter = 1
 script = ExtResource("1_jyhfs")
+
+[node name="Dialogue System" type="CanvasLayer" parent="." unique_id=200259394]
+script = ExtResource("7_tipki")
+
+[node name="MarginContainer" type="MarginContainer" parent="Dialogue System" unique_id=1525968547]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -151.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="DialogueBox" type="TextureRect" parent="Dialogue System/MarginContainer" unique_id=1358663434]
+layout_mode = 2
+texture = ExtResource("7_o6xl0")
+
+[node name="MarginContainer" type="MarginContainer" parent="Dialogue System/MarginContainer" unique_id=1975778777]
+layout_mode = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Dialogue System/MarginContainer/MarginContainer" unique_id=1922665277]
+layout_mode = 2
+
+[node name="Portrait" type="TextureRect" parent="Dialogue System/MarginContainer/MarginContainer/HBoxContainer" unique_id=440767982]
+texture_filter = 1
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="NameLabel" type="RichTextLabel" parent="Dialogue System/MarginContainer/MarginContainer/HBoxContainer" unique_id=300537959]
+custom_minimum_size = Vector2(50, 20)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_font_sizes/normal_font_size = 16
+bbcode_enabled = true
+scroll_active = false
+
+[node name="TextLabel" type="RichTextLabel" parent="Dialogue System/MarginContainer/MarginContainer/HBoxContainer" unique_id=819777042]
+custom_minimum_size = Vector2(0, 45)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = "
+
+"
+scroll_active = false
+
+[node name="ContinueIndicator" type="RichTextLabel" parent="Dialogue System/MarginContainer/MarginContainer/HBoxContainer" unique_id=1386800635]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+theme_override_font_sizes/normal_font_size = 18
+bbcode_enabled = true
+text = "[Z] "
+scroll_active = false
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1411930723]
 z_index = -999
@@ -47,33 +116,14 @@ texture = ExtResource("6_tefeu")
 [node name="Countdown" parent="Player" unique_id=1833679629 instance=ExtResource("3_sugp2")]
 position = Vector2(0, -40)
 
-[node name="Dialogue System" type="Node2D" parent="Player" unique_id=1934216459]
-position = Vector2(0, -46)
-script = ExtResource("7_tipki")
-text_display_remainder = 5
+[node name="Vignette" type="CanvasLayer" parent="." unique_id=1590114231]
+script = ExtResource("9_85g3d")
 
-[node name="TextureRect" type="TextureRect" parent="Player/Dialogue System" unique_id=1358663434]
-offset_left = -128.0
-offset_top = -26.0
-offset_right = 128.0
-offset_bottom = 14.0
-texture = ExtResource("7_o6xl0")
-
-[node name="RichTextLabel" type="RichTextLabel" parent="Player/Dialogue System" unique_id=819777042]
-offset_left = -90.0
-offset_top = -21.0
-offset_right = 122.0
-offset_bottom = 9.0
-theme_override_font_sizes/normal_font_size = 8
-theme_override_font_sizes/bold_font_size = 8
-theme_override_font_sizes/bold_italics_font_size = 8
-theme_override_font_sizes/italics_font_size = 8
-theme_override_font_sizes/mono_font_size = 8
-bbcode_enabled = true
-text = "Hello :> [color=red][b] MUAHAHAHA[/b][/color]
-uwu! [i]wHAT![/i] :< "
-scroll_active = false
-
-[node name="Sprite2D" type="Sprite2D" parent="Player/Dialogue System" unique_id=1167305397]
-position = Vector2(-108, -6)
-offset = Vector2(106, 4)
+[node name="ColorRect" type="ColorRect" parent="Vignette" unique_id=984459639]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)

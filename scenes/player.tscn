@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dsjptgh2t55ey" path="res://assets/animations/player_jump.png" id="5_d2wvv"]
 [ext_resource type="Texture2D" uid="uid://delobmikwyxip" path="res://assets/animations/player_walk.png" id="6_3v2ag"]
 [ext_resource type="Script" uid="uid://smd0l48qhvw4" path="res://scripts/abilities/dash_component.gd" id="7_fjrip"]
+[ext_resource type="Script" uid="uid://cawrpbdrk14ml" path="res://scripts/effects/camera_shake.gd" id="7_ur7pv"]
 [ext_resource type="Script" uid="uid://bwkgk384sh3wl" path="res://scripts/abilities/speed_component.gd" id="8_smehm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0wfyh"]
@@ -194,6 +195,9 @@ autoplay = "idle"
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=474870215]
 zoom = Vector2(4.5, 4.5)
+
+[node name="CameraShake" type="Node" parent="Camera2D" unique_id=1973236557]
+script = ExtResource("7_ur7pv")
 
 [node name="DashComponent" type="Node2D" parent="." unique_id=577402755]
 script = ExtResource("7_fjrip")

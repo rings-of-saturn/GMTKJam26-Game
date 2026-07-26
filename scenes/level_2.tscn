@@ -172,6 +172,7 @@ size = Vector2(8, 24)
 
 [node name="Level2" type="Node2D" unique_id=247212986]
 script = ExtResource("1_jm1iu")
+time_limit = 30
 routes = {
 0: 2,
 1: 0
@@ -216,6 +217,8 @@ text = "add in falling ui here"
 
 [node name="DefaultFallingTile" parent="." unique_id=1075722321 instance=ExtResource("4_eqxsl")]
 position = Vector2(398, -96)
+flash_on_hit = false
+breakable = false
 max_hits = 3
 flash_color = Color(0.5662265, 0.022053607, 0.21136263, 1)
 tile_width = 4

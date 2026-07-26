@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="DialogueLine" format=3 uid="uid://de3iltubg8p2v"]
+
+[ext_resource type="Script" uid="uid://ppxj4vyr0l6u" path="res://scripts/dialogues/dialogue_line.gd" id="1_pe6mu"]
+
+[resource]
+script = ExtResource("1_pe6mu")
+character_name = "Player"
+text = "Hi Dev!  How are you ? "
+delay_before = 1.0
+text_speed = 0.1
+metadata/_custom_type_script = "uid://ppxj4vyr0l6u"

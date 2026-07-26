@@ -4,6 +4,7 @@ enum GameState {
 	PLAYING,
 	LEVEL_COMPLETE,
 	STRESSED,
+	DIALOG,
 	# TODO Add future state ( CUTSCENE, PAUSED, DIALOG, GAME_OVER)
 }
 @export var level_list: Array[String] = [
@@ -17,7 +18,7 @@ var current_level_index = 0
 var state: GameState = GameState.PLAYING
 var level_slot: Node2D
 var current_level: Node
-
+var time_limit: int = 120
 
 
 func _ready() -> void:
@@ -49,7 +50,8 @@ func load_level(index: int) -> void:
 	level_slot.add_child(current_level)
 	current_level.owner = level_slot.owner
 
-	StressManager.start()
+	time_limit = current_level.get("time_limit") if current_level.get("time_limit") else 120
+	StressManager.start(time_limit)
 	state = GameState.PLAYING
 	_spawn_player()
 
@@ -79,18 +81,16 @@ func on_level_complete(target: int = -1) -> void:
 
 	StressManager.stop()
 	state = GameState.LEVEL_COMPLETE
-	await get_tree().create_timer(2.0).timeout
-
 	if target >= 0:
-		load_level(target)
+		load_level.bind(target).call_deferred()
 	else:
-		next_level()
+		next_level.call_deferred()
 
 func _on_timer_expired() -> void:
 	StressManager.stop()
 	state = GameState.STRESSED
-	await get_tree().create_timer(2.0).timeout
-	restart_level()
+	await get_tree().create_timer(1.0).timeout
+	restart_level()                          
 
 
 func _on_game_complete() -> void:

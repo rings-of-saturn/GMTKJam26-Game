@@ -48,6 +48,8 @@ func _ready() -> void:
 
 	if Engine.is_editor_hint():
 		return 
+
+	call_deferred("_apply_size") 
 	
 	if trigger_phase == 0:
 		_activate()
