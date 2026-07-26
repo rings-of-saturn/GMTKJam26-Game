@@ -339,7 +339,7 @@ size = Vector2(20, 162)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fidgd"]
 size = Vector2(18, 19)
 
-[node name="Level3" type="Node2D" unique_id=601881982]
+[node name="Level6" type="Node2D" unique_id=601881982]
 script = ExtResource("1_4t8k6")
 time_limit = 25
 
