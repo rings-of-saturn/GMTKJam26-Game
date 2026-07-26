@@ -55,6 +55,7 @@ var is_attacking = false
 
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var collision_shape: CollisionShape2D = $CollisionShape2D
+@onready var sound_player: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
 func _physics_process(delta) -> void:
 	if LevelManager.state != LevelManager.GameState.PLAYING:

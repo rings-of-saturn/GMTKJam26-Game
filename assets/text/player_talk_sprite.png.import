@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bsk5mb53tm7sa"
-path="res://.godot/imported/player_crouch.png-d21c47ed6a367c0f84e8c268825e5704.ctex"
+uid="uid://dtdmngby5meus"
+path="res://.godot/imported/player_talk_sprite.png-5e58bde0ac6ca668238cdfbcded44bb2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/animations/player/player_crouch.png"
-dest_files=["res://.godot/imported/player_crouch.png-d21c47ed6a367c0f84e8c268825e5704.ctex"]
+source_file="res://assets/text/player_talk_sprite.png"
+dest_files=["res://.godot/imported/player_talk_sprite.png-5e58bde0ac6ca668238cdfbcded44bb2.ctex"]
 
 [params]
 
