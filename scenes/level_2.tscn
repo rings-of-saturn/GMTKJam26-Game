@@ -344,7 +344,7 @@ size = Vector2(53, 47)
 
 [node name="Level2" type="Node2D" unique_id=247212986]
 script = ExtResource("1_jm1iu")
-granted_cards = Array[int]([2, 1])
+granted_cards = Array[int]([])
 time_limit = 30
 metadata/_edit_horizontal_guides_ = [-284.0]
 

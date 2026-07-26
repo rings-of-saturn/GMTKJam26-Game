@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://bv0rv3yhnmg3c"]
+
+[ext_resource type="Script" uid="uid://big7b7kxx4s1x" path="res://scripts/stress/falling_tile.gd" id="1_xp4lx"]
+[ext_resource type="Texture2D" uid="uid://ieykdshdfmp2" path="res://assets/palletes/snowy.png" id="2_xp4lx"]
+[ext_resource type="Script" uid="uid://b3ggn777n2ylq" path="res://scripts/stress/destructible_area.gd" id="3_2lr5t"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q47f4"]
+size = Vector2(8, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2g1vo"]
+size = Vector2(14, 14)
+
+[node name="RockFallingTile" type="RigidBody2D" unique_id=1075722321]
+gravity_scale = 0.0
+freeze = true
+script = ExtResource("1_xp4lx")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1471348158]
+texture_filter = 1
+texture = ExtResource("2_xp4lx")
+region_enabled = true
+region_rect = Rect2(33, 14.368, 8, 8)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1424251429]
+shape = SubResource("RectangleShape2D_q47f4")
+
+[node name="DestructibleZone" type="Area2D" parent="." unique_id=2104436825]
+script = ExtResource("3_2lr5t")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DestructibleZone" unique_id=513874048]
+shape = SubResource("RectangleShape2D_2g1vo")
