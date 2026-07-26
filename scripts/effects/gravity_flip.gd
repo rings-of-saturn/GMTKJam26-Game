@@ -27,5 +27,5 @@ func _on_body_entered(body: Node2D) -> void:
 	vignette.transition_to(Color(1, 1, 1, 0.8), 1.0)
 	await get_tree().create_timer(1.0).timeout
 
-	vignette.transition_to(Color(0, 0, 0, 1.0), 1.0)
+	vignette.transition_to(Color(0, 0, 0, 0.5), 1.0)
 	vignette.lock()

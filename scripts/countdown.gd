@@ -20,6 +20,10 @@ func _process(_delta: float) -> void:
 		)
 
 func _on_time_changed(remaining) -> void:
+	if remaining <= 0:
+		visible = false
+		return
+	visible = true
 	var minutes = remaining / 60
 	var seconds = remaining % 60
 	label.text = "%02d:%02d" % [minutes, seconds]
