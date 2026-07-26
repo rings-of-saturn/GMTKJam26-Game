@@ -1,6 +1,7 @@
 [gd_scene format=4 uid="uid://c3u1nydi12xin"]
 
 [ext_resource type="Script" uid="uid://cxv3spd254hdf" path="res://scripts/level_data.gd" id="1_snfn4"]
+[ext_resource type="Texture2D" uid="uid://hmthrtuv4ih2" path="res://assets/bgs/bg_2.png" id="2_gi7hc"]
 [ext_resource type="Texture2D" uid="uid://bpnvlyl3ykgd5" path="res://assets/palletes/blank/blank.png" id="2_ysmsy"]
 [ext_resource type="Texture2D" uid="uid://bo2ne2m5f3w78" path="res://assets/palletes/grassy.png" id="3_gi7hc"]
 [ext_resource type="Texture2D" uid="uid://ieykdshdfmp2" path="res://assets/palletes/snowy.png" id="4_snfn4"]
@@ -489,6 +490,10 @@ size = Vector2(15, 19)
 script = ExtResource("1_snfn4")
 granted_cards = Array[int]([2, 1])
 time_limit = 30
+
+[node name="Bg2" type="Sprite2D" parent="." unique_id=1224302502]
+position = Vector2(475, -995)
+texture = ExtResource("2_gi7hc")
 
 [node name="Tile Map" type="TileMapLayer" parent="." unique_id=1196869407]
 texture_filter = 1

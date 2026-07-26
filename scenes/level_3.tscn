@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://hibdip53pe7j" path="res://scripts/goal_area.gd" id="1_h23n6"]
 [ext_resource type="Script" uid="uid://cxv3spd254hdf" path="res://scripts/level_data.gd" id="1_uwxec"]
+[ext_resource type="Texture2D" uid="uid://pefcxo0be3l1" path="res://assets/bgs/bg_1.png" id="2_ha73p"]
 [ext_resource type="Texture2D" uid="uid://bpnvlyl3ykgd5" path="res://assets/palletes/blank/blank.png" id="2_uwxec"]
 [ext_resource type="Texture2D" uid="uid://bo2ne2m5f3w78" path="res://assets/palletes/grassy.png" id="4_1pn4d"]
 [ext_resource type="Script" uid="uid://c3wsqtduobx7l" path="res://scripts/dialogue_trigger.gd" id="4_ah8om"]
@@ -348,6 +349,10 @@ size = Vector2(8, 54)
 script = ExtResource("1_uwxec")
 granted_cards = Array[int]([2, 3, 1])
 time_limit = 30
+
+[node name="Bg1" type="Sprite2D" parent="." unique_id=833936579]
+position = Vector2(753, -488)
+texture = ExtResource("2_ha73p")
 
 [node name="SpawnPoint" type="Marker2D" parent="." unique_id=851768500]
 position = Vector2(636, -390)
