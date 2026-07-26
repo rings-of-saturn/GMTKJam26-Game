@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bpnvlyl3ykgd5" path="res://assets/palletes/blank/blank.png" id="2_tbt7t"]
 [ext_resource type="Texture2D" uid="uid://bo2ne2m5f3w78" path="res://assets/palletes/grassy.png" id="3_cynta"]
 [ext_resource type="Script" uid="uid://c3wsqtduobx7l" path="res://scripts/dialogue_trigger.gd" id="4_tbt7t"]
-[ext_resource type="Resource" uid="uid://de2cdui2u328b" path="res://assets/dialogues/level_1.tres" id="5_cynta"]
+[ext_resource type="Resource" uid="uid://wo1u4elg4qmc" path="res://assets/dialogues/5/Level5.tres" id="5_cynta"]
 [ext_resource type="Script" uid="uid://hibdip53pe7j" path="res://scripts/goal_area.gd" id="6_cynta"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ah8om"]
