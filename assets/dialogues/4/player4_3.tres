@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="DialogueLine" format=3 uid="uid://bl6axjmyg3vty"]
+
+[ext_resource type="Script" uid="uid://ppxj4vyr0l6u" path="res://scripts/dialogues/dialogue_line.gd" id="1_nnyhw"]
+
+[resource]
+script = ExtResource("1_nnyhw")
+character_name = "Player"
+text = "I mean, stuff is connected, sometimes?"
+delay_before = 0.6
+text_speed = 0.2
+metadata/_custom_type_script = "uid://ppxj4vyr0l6u"

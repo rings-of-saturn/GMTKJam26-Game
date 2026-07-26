@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="DialogueLine" format=3 uid="uid://bfcwsid1a7q3n"]
+
+[ext_resource type="Script" uid="uid://ppxj4vyr0l6u" path="res://scripts/dialogues/dialogue_line.gd" id="1_kq6yt"]
+
+[resource]
+script = ExtResource("1_kq6yt")
+character_name = "Player"
+text = "See, that wasn’t so bad, me! Those people weren’t kidding about this getting more stressful the farther up we go though. Hm…"
+text_speed = 0.1
+metadata/_custom_type_script = "uid://ppxj4vyr0l6u"

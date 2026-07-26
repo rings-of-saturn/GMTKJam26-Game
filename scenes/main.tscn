@@ -61,7 +61,7 @@ bbcode_enabled = true
 scroll_active = false
 
 [node name="TextLabel" type="RichTextLabel" parent="Dialogue System/MarginContainer/MarginContainer/HBoxContainer" unique_id=819777042]
-custom_minimum_size = Vector2(0, 45)
+custom_minimum_size = Vector2(0, 55)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4

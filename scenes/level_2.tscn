@@ -172,6 +172,7 @@ size = Vector2(8, 24)
 
 [node name="Level2" type="Node2D" unique_id=247212986]
 script = ExtResource("1_jm1iu")
+granted_cards = Array[int]([2, 1])
 time_limit = 30
 routes = {
 0: 2,
