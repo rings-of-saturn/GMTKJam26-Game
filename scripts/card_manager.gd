@@ -8,7 +8,7 @@ const CARD_BASE = preload("uid://8pd88rktly3w")
 const CARD_SPEED = preload("uid://byixd3vivdxyr")
 
 var current_first_card = CARD_BASE;
-var current_second_card = CARD_BASE;
+var current_second_card = CARD_SPEED;
 var current_third_card = CARD_BASE;	
 var enabled_cards : Array[int]
 
