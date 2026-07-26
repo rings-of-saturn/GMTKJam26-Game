@@ -485,7 +485,7 @@ size = Vector2(8, 54)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gi7hc"]
 size = Vector2(15, 19)
 
-[node name="Level7" type="Node2D" unique_id=601881982]
+[node name="Level8" type="Node2D" unique_id=601881982]
 script = ExtResource("1_snfn4")
 granted_cards = Array[int]([2, 1])
 time_limit = 30

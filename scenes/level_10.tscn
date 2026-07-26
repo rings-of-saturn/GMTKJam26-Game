@@ -1,13 +1,13 @@
-[gd_scene format=4 uid="uid://bbs43wvucmkjk"]
+[gd_scene format=4 uid="uid://1mxrfs1xu8ie"]
 
-[ext_resource type="Script" uid="uid://cxv3spd254hdf" path="res://scripts/level_data.gd" id="1_qqlqb"]
-[ext_resource type="Texture2D" uid="uid://bpnvlyl3ykgd5" path="res://assets/palletes/blank/blank.png" id="2_541qs"]
-[ext_resource type="Texture2D" uid="uid://bo2ne2m5f3w78" path="res://assets/palletes/grassy.png" id="3_desnu"]
-[ext_resource type="Texture2D" uid="uid://ieykdshdfmp2" path="res://assets/palletes/snowy.png" id="4_2q8u2"]
-[ext_resource type="PackedScene" uid="uid://bv0rv3yhnmg3c" path="res://scenes/stress/rock_falling_tile.tscn" id="5_wicpl"]
+[ext_resource type="Script" uid="uid://cxv3spd254hdf" path="res://scripts/level_data.gd" id="1_e6rfr"]
+[ext_resource type="Texture2D" uid="uid://bpnvlyl3ykgd5" path="res://assets/palletes/blank/blank.png" id="2_yo2sm"]
+[ext_resource type="Texture2D" uid="uid://bo2ne2m5f3w78" path="res://assets/palletes/grassy.png" id="3_uk14l"]
+[ext_resource type="Texture2D" uid="uid://ieykdshdfmp2" path="res://assets/palletes/snowy.png" id="4_ng28g"]
+[ext_resource type="PackedScene" uid="uid://bv0rv3yhnmg3c" path="res://scenes/stress/rock_falling_tile.tscn" id="5_yxmu7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ah8om"]
-texture = ExtResource("2_541qs")
+texture = ExtResource("2_yo2sm")
 texture_region_size = Vector2i(8, 8)
 0:0/0 = 0
 0:0/0/terrain_set = 0
@@ -159,7 +159,7 @@ texture_region_size = Vector2i(8, 8)
 1:2/0/terrains_peering_bit/top_right_corner = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p6vls"]
-texture = ExtResource("3_desnu")
+texture = ExtResource("3_uk14l")
 texture_region_size = Vector2i(8, 8)
 0:0/0 = 0
 0:0/0/terrain_set = 1
@@ -293,7 +293,7 @@ texture_region_size = Vector2i(8, 8)
 5:3/0/terrain_set = 2
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gi7hc"]
-texture = ExtResource("4_2q8u2")
+texture = ExtResource("4_ng28g")
 texture_region_size = Vector2i(8, 8)
 0:0/0 = 0
 0:0/0/terrain_set = 2
@@ -477,8 +477,8 @@ sources/2 = SubResource("TileSetAtlasSource_gi7hc")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wae8j"]
 size = Vector2(20, 162)
 
-[node name="Level9" type="Node2D" unique_id=601881982]
-script = ExtResource("1_qqlqb")
+[node name="Level10" type="Node2D" unique_id=601881982]
+script = ExtResource("1_e6rfr")
 granted_cards = Array[int]([2, 1])
 time_limit = 50
 
@@ -500,73 +500,73 @@ metadata/_edit_group_ = true
 position = Vector2(0, -71)
 shape = SubResource("RectangleShape2D_wae8j")
 
-[node name="RockFallingTile" parent="." unique_id=1075722321 instance=ExtResource("5_wicpl")]
+[node name="RockFallingTile" parent="." unique_id=1075722321 instance=ExtResource("5_yxmu7")]
 position = Vector2(580, -647)
 trigger_phase = 4
 
-[node name="RockFallingTile2" parent="." unique_id=1832856123 instance=ExtResource("5_wicpl")]
+[node name="RockFallingTile2" parent="." unique_id=1832856123 instance=ExtResource("5_yxmu7")]
 position = Vector2(580, -655)
 trigger_phase = 0
 
-[node name="RockFallingTile3" parent="." unique_id=788055662 instance=ExtResource("5_wicpl")]
+[node name="RockFallingTile3" parent="." unique_id=788055662 instance=ExtResource("5_yxmu7")]
 position = Vector2(580, -663)
 trigger_phase = 0
 
-[node name="RockFallingTile4" parent="." unique_id=1624425512 instance=ExtResource("5_wicpl")]
+[node name="RockFallingTile4" parent="." unique_id=1624425512 instance=ExtResource("5_yxmu7")]
 position = Vector2(572, -663)
 trigger_phase = 0
 
-[node name="RockFallingTile5" parent="." unique_id=1614100903 instance=ExtResource("5_wicpl")]
+[node name="RockFallingTile5" parent="." unique_id=1614100903 instance=ExtResource("5_yxmu7")]
 position = Vector2(572, -655)
 trigger_phase = 0
 
-[node name="RockFallingTile6" parent="." unique_id=545924207 instance=ExtResource("5_wicpl")]
+[node name="RockFallingTile6" parent="." unique_id=545924207 instance=ExtResource("5_yxmu7")]
 position = Vector2(572, -647)
 trigger_phase = 0
 
-[node name="RockFallingTile7" parent="." unique_id=60603083 instance=ExtResource("5_wicpl")]
+[node name="RockFallingTile7" parent="." unique_id=60603083 instance=ExtResource("5_yxmu7")]
 position = Vector2(572, -671)
 trigger_phase = 0
 
-[node name="RockFallingTile8" parent="." unique_id=1209971959 instance=ExtResource("5_wicpl")]
+[node name="RockFallingTile8" parent="." unique_id=1209971959 instance=ExtResource("5_yxmu7")]
 position = Vector2(580, -671)
 trigger_phase = 0
 
 [node name="Node2D" type="Node2D" parent="." unique_id=2127406843]
 
-[node name="RockFallingTile9" parent="Node2D" unique_id=1077494098 instance=ExtResource("5_wicpl")]
+[node name="RockFallingTile9" parent="Node2D" unique_id=1077494098 instance=ExtResource("5_yxmu7")]
 position = Vector2(420, -917)
 trigger_phase = 4
 
-[node name="RockFallingTile10" parent="Node2D" unique_id=1817103001 instance=ExtResource("5_wicpl")]
+[node name="RockFallingTile10" parent="Node2D" unique_id=1817103001 instance=ExtResource("5_yxmu7")]
 position = Vector2(410, -917)
 trigger_phase = 4
 
-[node name="RockFallingTile11" parent="Node2D" unique_id=796412113 instance=ExtResource("5_wicpl")]
+[node name="RockFallingTile11" parent="Node2D" unique_id=796412113 instance=ExtResource("5_yxmu7")]
 position = Vector2(402, -917)
 trigger_phase = 4
 
-[node name="RockFallingTile12" parent="Node2D" unique_id=2076527817 instance=ExtResource("5_wicpl")]
+[node name="RockFallingTile12" parent="Node2D" unique_id=2076527817 instance=ExtResource("5_yxmu7")]
 position = Vector2(394, -917)
 trigger_phase = 4
 
-[node name="RockFallingTile13" parent="Node2D" unique_id=1743288853 instance=ExtResource("5_wicpl")]
+[node name="RockFallingTile13" parent="Node2D" unique_id=1743288853 instance=ExtResource("5_yxmu7")]
 position = Vector2(386, -917)
 trigger_phase = 4
 
-[node name="RockFallingTile14" parent="Node2D" unique_id=1266383695 instance=ExtResource("5_wicpl")]
+[node name="RockFallingTile14" parent="Node2D" unique_id=1266383695 instance=ExtResource("5_yxmu7")]
 position = Vector2(378, -917)
 trigger_phase = 4
 
-[node name="RockFallingTile15" parent="Node2D" unique_id=201701815 instance=ExtResource("5_wicpl")]
+[node name="RockFallingTile15" parent="Node2D" unique_id=201701815 instance=ExtResource("5_yxmu7")]
 position = Vector2(370, -917)
 trigger_phase = 4
 
-[node name="RockFallingTile16" parent="Node2D" unique_id=340110949 instance=ExtResource("5_wicpl")]
+[node name="RockFallingTile16" parent="Node2D" unique_id=340110949 instance=ExtResource("5_yxmu7")]
 position = Vector2(362, -917)
 trigger_phase = 4
 
-[node name="RockFallingTile17" parent="Node2D" unique_id=269676731 instance=ExtResource("5_wicpl")]
+[node name="RockFallingTile17" parent="Node2D" unique_id=269676731 instance=ExtResource("5_yxmu7")]
 position = Vector2(355, -917)
 trigger_phase = 4
 
@@ -574,42 +574,42 @@ trigger_phase = 4
 position = Vector2(0, -119)
 metadata/_edit_group_ = true
 
-[node name="RockFallingTile" parent="Node2D2" unique_id=2071039662 instance=ExtResource("5_wicpl")]
+[node name="RockFallingTile" parent="Node2D2" unique_id=2071039662 instance=ExtResource("5_yxmu7")]
 position = Vector2(593, -660)
 trigger_phase = 4
 
-[node name="RockFallingTile9" parent="Node2D2" unique_id=1885752573 instance=ExtResource("5_wicpl")]
+[node name="RockFallingTile9" parent="Node2D2" unique_id=1885752573 instance=ExtResource("5_yxmu7")]
 position = Vector2(420, -917)
 trigger_phase = 4
 
-[node name="RockFallingTile10" parent="Node2D2" unique_id=1723277616 instance=ExtResource("5_wicpl")]
+[node name="RockFallingTile10" parent="Node2D2" unique_id=1723277616 instance=ExtResource("5_yxmu7")]
 position = Vector2(410, -917)
 trigger_phase = 4
 
-[node name="RockFallingTile11" parent="Node2D2" unique_id=1842262110 instance=ExtResource("5_wicpl")]
+[node name="RockFallingTile11" parent="Node2D2" unique_id=1842262110 instance=ExtResource("5_yxmu7")]
 position = Vector2(402, -917)
 trigger_phase = 4
 
-[node name="RockFallingTile12" parent="Node2D2" unique_id=512781957 instance=ExtResource("5_wicpl")]
+[node name="RockFallingTile12" parent="Node2D2" unique_id=512781957 instance=ExtResource("5_yxmu7")]
 position = Vector2(394, -917)
 trigger_phase = 4
 
-[node name="RockFallingTile13" parent="Node2D2" unique_id=2125142040 instance=ExtResource("5_wicpl")]
+[node name="RockFallingTile13" parent="Node2D2" unique_id=2125142040 instance=ExtResource("5_yxmu7")]
 position = Vector2(386, -917)
 trigger_phase = 4
 
-[node name="RockFallingTile14" parent="Node2D2" unique_id=1894226559 instance=ExtResource("5_wicpl")]
+[node name="RockFallingTile14" parent="Node2D2" unique_id=1894226559 instance=ExtResource("5_yxmu7")]
 position = Vector2(378, -917)
 trigger_phase = 4
 
-[node name="RockFallingTile15" parent="Node2D2" unique_id=1504102456 instance=ExtResource("5_wicpl")]
+[node name="RockFallingTile15" parent="Node2D2" unique_id=1504102456 instance=ExtResource("5_yxmu7")]
 position = Vector2(370, -917)
 trigger_phase = 4
 
-[node name="RockFallingTile16" parent="Node2D2" unique_id=1150772636 instance=ExtResource("5_wicpl")]
+[node name="RockFallingTile16" parent="Node2D2" unique_id=1150772636 instance=ExtResource("5_yxmu7")]
 position = Vector2(362, -917)
 trigger_phase = 4
 
-[node name="RockFallingTile17" parent="Node2D2" unique_id=57632492 instance=ExtResource("5_wicpl")]
+[node name="RockFallingTile17" parent="Node2D2" unique_id=57632492 instance=ExtResource("5_yxmu7")]
 position = Vector2(355, -917)
 trigger_phase = 4
