@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="DialogueLine" format=3 uid="uid://dacjxij328c3v"]
+
+[ext_resource type="Script" uid="uid://ppxj4vyr0l6u" path="res://scripts/dialogues/dialogue_line.gd" id="1_vwojw"]
+
+[resource]
+script = ExtResource("1_vwojw")
+text = "Yeah, me! What I said before is entirely right! I got–!"
+metadata/_custom_type_script = "uid://ppxj4vyr0l6u"

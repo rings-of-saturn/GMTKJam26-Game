@@ -4,8 +4,10 @@
 [ext_resource type="Texture2D" uid="uid://bpnvlyl3ykgd5" path="res://assets/palletes/blank/blank.png" id="2_yk4f3"]
 [ext_resource type="Texture2D" uid="uid://bo2ne2m5f3w78" path="res://assets/palletes/grassy.png" id="3_cp0rv"]
 [ext_resource type="Script" uid="uid://c3wsqtduobx7l" path="res://scripts/dialogue_trigger.gd" id="5_ycko3"]
-[ext_resource type="Resource" uid="uid://de2cdui2u328b" path="res://assets/dialogues/level_1.tres" id="6_x7blo"]
+[ext_resource type="Resource" uid="uid://cfwe4x4yhxd61" path="res://assets/dialogues/4/Payer4Set.tres" id="6_x7blo"]
 [ext_resource type="PackedScene" uid="uid://cvpnip2t2pecw" path="res://scenes/stress/default_falling_tile.tscn" id="7_g31h8"]
+[ext_resource type="Resource" uid="uid://bntur4n3uc02t" path="res://assets/dialogues/4/PlayerSet4_4.tres" id="7_qsmat"]
+[ext_resource type="Script" uid="uid://hibdip53pe7j" path="res://scripts/goal_area.gd" id="8_qsmat"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ah8om"]
 texture = ExtResource("2_yk4f3")
@@ -339,7 +341,10 @@ size = Vector2(20, 162)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qsmat"]
 size = Vector2(18, 19)
 
-[node name="Level3" type="Node2D" unique_id=601881982]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yk4f3"]
+size = Vector2(8, 54)
+
+[node name="Level4" type="Node2D" unique_id=601881982]
 script = ExtResource("1_qsmat")
 time_limit = 40
 
@@ -441,9 +446,18 @@ shape = SubResource("RectangleShape2D_qsmat")
 [node name="Dialogue Trigger2" type="Area2D" parent="." unique_id=606596496]
 position = Vector2(719, -584)
 script = ExtResource("5_ycko3")
-dialogue = ExtResource("6_x7blo")
+dialogue = ExtResource("7_qsmat")
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Dialogue Trigger2" unique_id=1787887501]
 position = Vector2(15, 6.5)
 shape = SubResource("RectangleShape2D_qsmat")
+
+[node name="Goal Area" type="Area2D" parent="." unique_id=2065336412]
+position = Vector2(1046, -707)
+script = ExtResource("8_qsmat")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Goal Area" unique_id=1753434296]
+position = Vector2(6, -17)
+shape = SubResource("RectangleShape2D_yk4f3")

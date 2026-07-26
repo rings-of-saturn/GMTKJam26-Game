@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="DialogueLine" format=3 uid="uid://bk2b7cdul1hgn"]
+
+[ext_resource type="Script" uid="uid://ppxj4vyr0l6u" path="res://scripts/dialogues/dialogue_line.gd" id="1_c472c"]
+
+[resource]
+script = ExtResource("1_c472c")
+character_name = "Dev"
+text = "But I’m really running out of room to breathe here."
+metadata/_custom_type_script = "uid://ppxj4vyr0l6u"

@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="DialogueLine" format=3 uid="uid://gmv8l6chmflm"]
+
+[ext_resource type="Script" uid="uid://ppxj4vyr0l6u" path="res://scripts/dialogues/dialogue_line.gd" id="1_wt8qc"]
+
+[resource]
+script = ExtResource("1_wt8qc")
+character_name = "Dev"
+text = "Dev log. 4, So, I take back what I said before. I don’t really know what kind of miracle worker they expect to demolish everything left to add to the platformer"
+metadata/_custom_type_script = "uid://ppxj4vyr0l6u"
