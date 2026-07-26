@@ -51,6 +51,8 @@ var crouching = false;
 var var_jump_speed = 0.0
 var max_fall_current = MAX_FALL
 var was_on_ground = false
+var is_attacking = false
+
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var collision_shape: CollisionShape2D = $CollisionShape2D
 

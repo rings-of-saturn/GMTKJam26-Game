@@ -93,6 +93,8 @@ func _perform_dash() -> void:
 	cooldown_timer = dash_cooldown
 	dash_state = DashState.FREEZE
 
+	player.is_attacking = true
+
 	if dash_dir.x != 0.0 and sprite:
 		sprite.flip_h = dash_dir.x > 0.0
 
@@ -115,7 +117,7 @@ func _handle_dash_jump() -> void:
 	if dash_dir.x != 0.0 and dash_dir.y == 0.0:
 		if wall != 0:
 			_wall_jump_cancel(-wall)
-		else:
+		elif player.is_on_floor():                              
 			_cancel_dash_with_jump(super_jump_h_mult)
 	elif dash_dir.x == 0.0 and dash_dir.y == -1.0:
 		if wall != 0:
@@ -126,12 +128,14 @@ func _handle_dash_jump() -> void:
 
 func _cancel_dash_with_jump(h_mult: float) -> void:
 	dash_state = DashState.IDLE
+	player.is_attacking = false
 	player.velocity.y = wall_jump_y_speed
 	player.velocity.x *= h_mult
 
 
 func _wall_jump_cancel(dir: int) -> void:
 	dash_state = DashState.IDLE
+	player.is_attacking = false
 	player.velocity.x = wall_jump_h_speed * dir
 	player.velocity.y = wall_jump_y_speed
 
@@ -147,6 +151,7 @@ func _check_wall(dir: int) -> bool:
 
 func _end_dash() -> void:
 	dash_state = DashState.IDLE
+	player.is_attacking = false
 	if dash_dir.y <= 0.0:
 		var end_speed := dash_dir * end_dash_speed
 		if dash_dir.y < 0.0:
