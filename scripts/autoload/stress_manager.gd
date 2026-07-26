@@ -32,7 +32,9 @@ func _ready() -> void:
 func start(duration = -1) -> void:
 	if duration > 0:
 		level_time = duration
-		time_remaining = duration
+
+	if level_time > 0:
+		time_remaining = level_time
 		current_phase = StressPhase.CALM
 		running = true
 		timer.start()
@@ -42,7 +44,6 @@ func start(duration = -1) -> void:
 		running = false
 		timer.stop()
 		time_changed.emit(0)
-
 
 func stop() -> void:
 	running = false
