@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://cxv3spd254hdf" path="res://scripts/level_data.gd" id="1_v7yg4"]
 [ext_resource type="Texture2D" uid="uid://bpnvlyl3ykgd5" path="res://assets/palletes/blank/blank.png" id="2_ci1vt"]
 [ext_resource type="Texture2D" uid="uid://bo2ne2m5f3w78" path="res://assets/palletes/grassy.png" id="3_ophlp"]
+[ext_resource type="Resource" uid="uid://xquhr1i4up41" path="res://assets/dialogues/7/Level7Helper.tres" id="3_wu5f3"]
 [ext_resource type="PackedScene" uid="uid://cvpnip2t2pecw" path="res://scenes/stress/default_falling_tile.tscn" id="4_wu5f3"]
 [ext_resource type="Script" uid="uid://c3wsqtduobx7l" path="res://scripts/dialogue_trigger.gd" id="5_fsh38"]
 [ext_resource type="Resource" uid="uid://ceefslyuma0ax" path="res://assets/dialogues/7/Level7.tres" id="6_ci1vt"]
@@ -338,7 +339,7 @@ sources/1 = SubResource("TileSetAtlasSource_p6vls")
 size = Vector2(20, 162)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fidgd"]
-size = Vector2(18, 19)
+size = Vector2(15, 19)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ophlp"]
 size = Vector2(8, 54)
@@ -369,76 +370,74 @@ shape = SubResource("RectangleShape2D_wae8j")
 position = Vector2(-157, 9)
 metadata/_edit_group_ = true
 
+[node name="Dialogue Trigger2" type="Area2D" parent="falling_2x6_1" unique_id=996081628]
+position = Vector2(948, -650)
+script = ExtResource("5_fsh38")
+dialogue = ExtResource("3_wu5f3")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="falling_2x6_1/Dialogue Trigger2" unique_id=982735052]
+position = Vector2(16.5, 6.5)
+shape = SubResource("RectangleShape2D_fidgd")
+
 [node name="DefaultFallingTile" parent="falling_2x6_1" unique_id=1075722321 instance=ExtResource("4_wu5f3")]
 position = Vector2(783, -483)
 trigger_phase = 0
-breakable = false
 metadata/_edit_group_ = true
 
 [node name="DefaultFallingTile2" parent="falling_2x6_1" unique_id=960072196 instance=ExtResource("4_wu5f3")]
 position = Vector2(791, -483)
 trigger_phase = 0
-breakable = false
 metadata/_edit_group_ = true
 
 [node name="DefaultFallingTile3" parent="falling_2x6_1" unique_id=403617275 instance=ExtResource("4_wu5f3")]
 position = Vector2(799, -483)
 trigger_phase = 0
-breakable = false
 metadata/_edit_group_ = true
 
 [node name="DefaultFallingTile4" parent="falling_2x6_1" unique_id=1238634357 instance=ExtResource("4_wu5f3")]
 position = Vector2(783, -491)
 trigger_phase = 0
-breakable = false
 metadata/_edit_group_ = true
 
 [node name="DefaultFallingTile5" parent="falling_2x6_1" unique_id=1816552907 instance=ExtResource("4_wu5f3")]
 position = Vector2(791, -491)
 trigger_phase = 0
-breakable = false
 metadata/_edit_group_ = true
 
 [node name="DefaultFallingTile6" parent="falling_2x6_1" unique_id=587888291 instance=ExtResource("4_wu5f3")]
 position = Vector2(799, -491)
 trigger_phase = 0
-breakable = false
 metadata/_edit_group_ = true
 
 [node name="DefaultFallingTile7" parent="falling_2x6_1" unique_id=1166553131 instance=ExtResource("4_wu5f3")]
 position = Vector2(807, -483)
 trigger_phase = 0
-breakable = false
 metadata/_edit_group_ = true
 
 [node name="DefaultFallingTile8" parent="falling_2x6_1" unique_id=2129166016 instance=ExtResource("4_wu5f3")]
 position = Vector2(815, -483)
 trigger_phase = 0
-breakable = false
 metadata/_edit_group_ = true
 
 [node name="DefaultFallingTile9" parent="falling_2x6_1" unique_id=1515294123 instance=ExtResource("4_wu5f3")]
 position = Vector2(823, -483)
 trigger_phase = 0
-breakable = false
 metadata/_edit_group_ = true
 
 [node name="DefaultFallingTile10" parent="falling_2x6_1" unique_id=1209898769 instance=ExtResource("4_wu5f3")]
 position = Vector2(807, -491)
 trigger_phase = 0
-breakable = false
 metadata/_edit_group_ = true
 
 [node name="DefaultFallingTile11" parent="falling_2x6_1" unique_id=1580020675 instance=ExtResource("4_wu5f3")]
 position = Vector2(815, -491)
 trigger_phase = 0
-breakable = false
 metadata/_edit_group_ = true
 
 [node name="DefaultFallingTile12" parent="falling_2x6_1" unique_id=1127006276 instance=ExtResource("4_wu5f3")]
 position = Vector2(823, -491)
 trigger_phase = 0
-breakable = false
 metadata/_edit_group_ = true
 
 [node name="Dialogue Trigger" type="Area2D" parent="." unique_id=1954101589]
@@ -458,37 +457,31 @@ metadata/_edit_group_ = true
 [node name="DefaultFallingTile" parent="falling_2x3_1" unique_id=330509126 instance=ExtResource("4_wu5f3")]
 position = Vector2(783, -483)
 trigger_phase = 0
-breakable = false
 metadata/_edit_group_ = true
 
 [node name="DefaultFallingTile2" parent="falling_2x3_1" unique_id=620122967 instance=ExtResource("4_wu5f3")]
 position = Vector2(791, -483)
 trigger_phase = 0
-breakable = false
 metadata/_edit_group_ = true
 
 [node name="DefaultFallingTile3" parent="falling_2x3_1" unique_id=1065233257 instance=ExtResource("4_wu5f3")]
 position = Vector2(799, -483)
 trigger_phase = 0
-breakable = false
 metadata/_edit_group_ = true
 
 [node name="DefaultFallingTile4" parent="falling_2x3_1" unique_id=179654319 instance=ExtResource("4_wu5f3")]
 position = Vector2(783, -491)
 trigger_phase = 0
-breakable = false
 metadata/_edit_group_ = true
 
 [node name="DefaultFallingTile5" parent="falling_2x3_1" unique_id=812868395 instance=ExtResource("4_wu5f3")]
 position = Vector2(791, -491)
 trigger_phase = 0
-breakable = false
 metadata/_edit_group_ = true
 
 [node name="DefaultFallingTile6" parent="falling_2x3_1" unique_id=213369082 instance=ExtResource("4_wu5f3")]
 position = Vector2(799, -491)
 trigger_phase = 0
-breakable = false
 metadata/_edit_group_ = true
 
 [node name="falling_2x3_2" type="Node2D" parent="." unique_id=1380113418]
@@ -498,37 +491,31 @@ metadata/_edit_group_ = true
 [node name="DefaultFallingTile" parent="falling_2x3_2" unique_id=1112578454 instance=ExtResource("4_wu5f3")]
 position = Vector2(783, -483)
 trigger_phase = 0
-breakable = false
 metadata/_edit_group_ = true
 
 [node name="DefaultFallingTile2" parent="falling_2x3_2" unique_id=456795817 instance=ExtResource("4_wu5f3")]
 position = Vector2(791, -483)
 trigger_phase = 0
-breakable = false
 metadata/_edit_group_ = true
 
 [node name="DefaultFallingTile3" parent="falling_2x3_2" unique_id=491693427 instance=ExtResource("4_wu5f3")]
 position = Vector2(799, -483)
 trigger_phase = 0
-breakable = false
 metadata/_edit_group_ = true
 
 [node name="DefaultFallingTile4" parent="falling_2x3_2" unique_id=625082096 instance=ExtResource("4_wu5f3")]
 position = Vector2(783, -491)
 trigger_phase = 0
-breakable = false
 metadata/_edit_group_ = true
 
 [node name="DefaultFallingTile5" parent="falling_2x3_2" unique_id=2069562939 instance=ExtResource("4_wu5f3")]
 position = Vector2(791, -491)
 trigger_phase = 0
-breakable = false
 metadata/_edit_group_ = true
 
 [node name="DefaultFallingTile6" parent="falling_2x3_2" unique_id=1561665082 instance=ExtResource("4_wu5f3")]
 position = Vector2(799, -491)
 trigger_phase = 0
-breakable = false
 metadata/_edit_group_ = true
 
 [node name="Goal Area2" type="Area2D" parent="." unique_id=956890752]

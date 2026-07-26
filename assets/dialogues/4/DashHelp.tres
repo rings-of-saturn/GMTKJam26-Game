@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="DialogueLine" format=3 uid="uid://dl4frgqhrvxcn"]
+
+[ext_resource type="Script" uid="uid://ppxj4vyr0l6u" path="res://scripts/dialogues/dialogue_line.gd" id="1_jjne1"]
+
+[resource]
+script = ExtResource("1_jjne1")
+character_name = "Dev"
+text = "I managed to code a dash ability, by pressing  [X] and a direction  the player should be able to dash, it cost me so much time I don't know if Im still on time... "
+metadata/_custom_type_script = "uid://ppxj4vyr0l6u"

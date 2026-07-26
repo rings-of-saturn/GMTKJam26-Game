@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="DialogueLine" format=3 uid="uid://cnh1deax50hwd"]
+
+[ext_resource type="Script" uid="uid://ppxj4vyr0l6u" path="res://scripts/dialogues/dialogue_line.gd" id="1_m33l0"]
+
+[resource]
+script = ExtResource("1_m33l0")
+character_name = "Dev"
+text = "Dev log. 5, This has to be some kind of elaborate joke. You’re telling me they shortened an already short timeline?"
+metadata/_custom_type_script = "uid://ppxj4vyr0l6u"

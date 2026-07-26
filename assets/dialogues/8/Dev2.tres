@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="DialogueLine" format=3 uid="uid://crd8401urtbe"]
+
+[ext_resource type="Script" uid="uid://ppxj4vyr0l6u" path="res://scripts/dialogues/dialogue_line.gd" id="1_pr30v"]
+
+[resource]
+script = ExtResource("1_pr30v")
+character_name = "Dev"
+text = "Two days left, and this is all I even have..? I can’t hold it together like this, I can’t."
+metadata/_custom_type_script = "uid://ppxj4vyr0l6u"

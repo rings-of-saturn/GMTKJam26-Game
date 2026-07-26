@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="DialogueSet" format=3 uid="uid://xquhr1i4up41"]
+
+[ext_resource type="Script" uid="uid://ppxj4vyr0l6u" path="res://scripts/dialogues/dialogue_line.gd" id="1_5c0db"]
+[ext_resource type="Resource" uid="uid://cp08f51rynni7" path="res://assets/dialogues/7/GroundPoundHelp.tres" id="2_0fvj8"]
+[ext_resource type="Script" uid="uid://cogu40mf2nwu5" path="res://scripts/dialogues/dialogue_set.gd" id="2_lj2yg"]
+
+[resource]
+script = ExtResource("2_lj2yg")
+lines = Array[ExtResource("1_5c0db")]([ExtResource("2_0fvj8")])
+metadata/_custom_type_script = "uid://cogu40mf2nwu5"

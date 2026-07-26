@@ -12,5 +12,5 @@ func _on_body_entered(body: Node2D) -> void:
 		return
 	if body.is_attacking:
 		tile.destroy()
-	if tile.kills_player and not tile.freeze and tile.linear_velocity.y > 0.0:
+	if tile.kills_player and not tile.freeze and tile.linear_velocity.y > 50.0:
 		LevelManager.restart_level()
