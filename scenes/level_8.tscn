@@ -4,6 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://bpnvlyl3ykgd5" path="res://assets/palletes/blank/blank.png" id="2_ysmsy"]
 [ext_resource type="Texture2D" uid="uid://bo2ne2m5f3w78" path="res://assets/palletes/grassy.png" id="3_gi7hc"]
 [ext_resource type="Texture2D" uid="uid://ieykdshdfmp2" path="res://assets/palletes/snowy.png" id="4_snfn4"]
+[ext_resource type="Script" uid="uid://hibdip53pe7j" path="res://scripts/goal_area.gd" id="5_g5egw"]
+[ext_resource type="Script" uid="uid://c3wsqtduobx7l" path="res://scripts/dialogue_trigger.gd" id="6_snfn4"]
+[ext_resource type="Resource" uid="uid://cbq5pmcbkp3et" path="res://assets/dialogues/8/Level8.tres" id="7_ysmsy"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ah8om"]
 texture = ExtResource("2_ysmsy")
@@ -476,6 +479,12 @@ sources/2 = SubResource("TileSetAtlasSource_gi7hc")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wae8j"]
 size = Vector2(20, 162)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b1n5o"]
+size = Vector2(8, 54)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gi7hc"]
+size = Vector2(15, 19)
+
 [node name="Level7" type="Node2D" unique_id=601881982]
 script = ExtResource("1_snfn4")
 granted_cards = Array[int]([2, 1])
@@ -488,7 +497,7 @@ tile_map_data = PackedByteArray("AABUALX/AQABAAIAAABUALT/AQACAAIAAABUALP/AQACAAI
 tile_set = SubResource("TileSet_hhfj6")
 
 [node name="SpawnPoint" type="Marker2D" parent="." unique_id=851768500]
-position = Vector2(668, -662)
+position = Vector2(669, -654)
 
 [node name="barrier" type="StaticBody2D" parent="." unique_id=933485493]
 position = Vector2(731, -651)
@@ -497,3 +506,22 @@ metadata/_edit_group_ = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="barrier" unique_id=706632649]
 position = Vector2(0, -71)
 shape = SubResource("RectangleShape2D_wae8j")
+
+[node name="Goal Area" type="Area2D" parent="." unique_id=1880333391]
+position = Vector2(248, -1162)
+script = ExtResource("5_g5egw")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Goal Area" unique_id=2031067849]
+position = Vector2(6, -17)
+shape = SubResource("RectangleShape2D_b1n5o")
+
+[node name="Dialogue Trigger" type="Area2D" parent="." unique_id=295882732]
+position = Vector2(653, -664)
+script = ExtResource("6_snfn4")
+dialogue = ExtResource("7_ysmsy")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Dialogue Trigger" unique_id=2033772239]
+position = Vector2(16.5, 6.5)
+shape = SubResource("RectangleShape2D_gi7hc")
