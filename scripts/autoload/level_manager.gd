@@ -8,12 +8,8 @@ enum GameState {
 	# TODO Add future state ( CUTSCENE, PAUSED, DIALOG, GAME_OVER)
 }
 @export var level_list: Array[String] = [
-<<<<<<< HEAD
-	"res://scenes/level_6.tscn",
+	"res://scenes/level_7.tscn",
 	
-=======
-	"res://scenes/level_4.tscn",
->>>>>>> d44b64733d8fdcd2b0993adf4356b4bf223a3a44
 	"res://scenes/level_1.tscn",
 	"res://scenes/level_2.tscn",
 	"res://scenes/level_3.tscn",

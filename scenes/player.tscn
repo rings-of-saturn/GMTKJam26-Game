@@ -211,3 +211,4 @@ script = ExtResource("8_smehm")
 
 [node name="GroundPoundComponent" type="Node2D" parent="." unique_id=66694658]
 script = ExtResource("10_y4r1p")
+bounce_cap = -10000.0
