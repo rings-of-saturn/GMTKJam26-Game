@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="DialogueLine" format=3 uid="uid://od6ogjhd2hvw"]
+
+[ext_resource type="Script" uid="uid://ppxj4vyr0l6u" path="res://scripts/dialogues/dialogue_line.gd" id="1_kr6fh"]
+
+[resource]
+script = ExtResource("1_kr6fh")
+character_name = "Dev"
+text = "That’s… probably what matters a lot more ultimately, that we made something we love. "
+metadata/_custom_type_script = "uid://ppxj4vyr0l6u"

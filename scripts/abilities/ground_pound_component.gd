@@ -28,7 +28,6 @@ func _physics_process(delta: float) -> void:
 
 	# Handle pending bounce BEFORE any physics this frame
 	if should_bounce:
-		print("[POUND] APPLYING BOUNCE: ", bounce_speed, " | velocity was: ", player.velocity.y)
 		should_bounce = false
 		player.velocity.y = bounce_speed
 		player.max_fall_current = player.MAX_FALL
@@ -49,7 +48,6 @@ func _physics_process(delta: float) -> void:
 	if player.is_on_floor():
 		var speed: float = player.pre_move_velocity_y  
 		bounce_speed = maxf(-speed * sqrt(bounce_mult), bounce_cap)
-		print("[POUND] LANDED! speed=", speed, " | bounce=", bounce_speed, " | mult=", bounce_mult)
 		should_bounce = true
 		state = PoundState.LANDED
 

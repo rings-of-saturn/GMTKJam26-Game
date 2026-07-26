@@ -120,7 +120,7 @@ texture = ExtResource("6_tefeu")
 [node name="Countdown" parent="Player" unique_id=1833679629 instance=ExtResource("3_sugp2")]
 position = Vector2(0, -40)
 
-[node name="Vignette" type="CanvasLayer" parent="." unique_id=1590114231]
+[node name="Vignette" type="CanvasLayer" parent="." unique_id=1590114231 groups=["vignette"]]
 script = ExtResource("9_85g3d")
 
 [node name="ColorRect" type="ColorRect" parent="Vignette" unique_id=984459639]
