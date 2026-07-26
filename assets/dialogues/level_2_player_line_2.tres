@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="DialogueLine" format=3 uid="uid://dhlggkbx8quri"]
+
+[ext_resource type="Script" uid="uid://ppxj4vyr0l6u" path="res://scripts/dialogues/dialogue_line.gd" id="1_rq4k4"]
+
+[resource]
+script = ExtResource("1_rq4k4")
+character_name = "player"
+text = "Woah. The landscape… It's so nice. Honestly, I think I could get used to this!"
+delay_before = 1.25
+metadata/_custom_type_script = "uid://ppxj4vyr0l6u"

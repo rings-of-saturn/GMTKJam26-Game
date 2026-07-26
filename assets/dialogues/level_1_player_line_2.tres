@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="DialogueLine" format=3 uid="uid://bt0r28yw8fecx"]
+
+[ext_resource type="Script" uid="uid://ppxj4vyr0l6u" path="res://scripts/dialogues/dialogue_line.gd" id="1_kt3bf"]
+
+[resource]
+script = ExtResource("1_kt3bf")
+character_name = "player"
+text = "Okay, well I have, like, most of the stuff on the checklist. Alright then, lets go!"
+delay_before = 0.5
+metadata/_custom_type_script = "uid://ppxj4vyr0l6u"

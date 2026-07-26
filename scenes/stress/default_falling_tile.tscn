@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cvpnip2t2pecw"]
 
 [ext_resource type="Script" uid="uid://big7b7kxx4s1x" path="res://scripts/stress/falling_tile.gd" id="1_5pyq1"]
-[ext_resource type="Texture2D" uid="uid://bpnvlyl3ykgd5" path="res://assets/palletes/blank/blank.png" id="1_ximnt"]
+[ext_resource type="Texture2D" uid="uid://bo2ne2m5f3w78" path="res://assets/palletes/grassy.png" id="2_5pyq1"]
 [ext_resource type="Script" uid="uid://b3ggn777n2ylq" path="res://scripts/stress/destructible_area.gd" id="3_rxwaw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q47f4"]
@@ -17,7 +17,7 @@ script = ExtResource("1_5pyq1")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=536575778]
 texture_filter = 1
-texture = ExtResource("1_ximnt")
+texture = ExtResource("2_5pyq1")
 region_enabled = true
 region_rect = Rect2(6.2024736, 14.367665, 8, 8)
 

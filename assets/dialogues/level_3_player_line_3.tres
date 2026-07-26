@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="DialogueLine" format=3 uid="uid://3rt1eihrswso"]
+
+[ext_resource type="Script" uid="uid://ppxj4vyr0l6u" path="res://scripts/dialogues/dialogue_line.gd" id="1_ijb4o"]
+
+[resource]
+script = ExtResource("1_ijb4o")
+character_name = "player"
+text = "Eep!! What..? I didn’t know the climb had stuff like this.."
+delay_before = 0.0
+text_speed = 0.09
+metadata/_custom_type_script = "uid://ppxj4vyr0l6u"

@@ -11,6 +11,7 @@ enum StressPhase {
 signal time_changed(remaining)
 signal stress_phase_changed(phase: StressPhase)
 signal timer_expired()
+signal toggle_countdown(new_value : bool)
 
 @export var level_time = 120
 
@@ -34,7 +35,8 @@ func start(duration = -1) -> void:
 		time_remaining = duration
 	current_phase = StressPhase.CALM
 	running = true
-	timer.start()
+	if not level_time == -1:
+		timer.start()
 	time_changed.emit(time_remaining)
 	stress_phase_changed.emit(current_phase)
 

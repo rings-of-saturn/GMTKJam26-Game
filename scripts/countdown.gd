@@ -9,6 +9,7 @@ func _ready() -> void:
 	base_position = label.position
 	StressManager.time_changed.connect(_on_time_changed)
 	StressManager.stress_phase_changed.connect(_on_phase)
+	StressManager.toggle_countdown.connect(_toggle)
 	_on_time_changed(StressManager.time_remaining)
 
 func _process(_delta: float) -> void:
@@ -43,3 +44,7 @@ func _on_phase(phase: StressManager.StressPhase) -> void:
 		StressManager.StressPhase.STRESSED:
 			label.modulate = Color(0.35, 0, 0)
 			jitter = 8.0
+			
+			
+func _toggle(new_value : bool):
+	visible = new_value

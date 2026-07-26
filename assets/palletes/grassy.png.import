@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://3wb0sjf1s5au"
-path="res://.godot/imported/dev_talk_sprite.png-abb0cd95b936571763fdca9856232936.ctex"
+uid="uid://bo2ne2m5f3w78"
+path="res://.godot/imported/grassy.png-114e8117ba7f0374b408f42951239290.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/text/dev_talk_sprite.png"
-dest_files=["res://.godot/imported/dev_talk_sprite.png-abb0cd95b936571763fdca9856232936.ctex"]
+source_file="res://assets/palletes/grassy.png"
+dest_files=["res://.godot/imported/grassy.png-114e8117ba7f0374b408f42951239290.ctex"]
 
 [params]
 

@@ -193,6 +193,7 @@ texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_enspi")
 animation = &"walk"
 autoplay = "idle"
+flip_h = true
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=474870215]
 zoom = Vector2(4.5, 4.5)

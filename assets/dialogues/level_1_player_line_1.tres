@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="DialogueLine" format=3 uid="uid://rc1necg73xl7"]
+
+[ext_resource type="Script" uid="uid://ppxj4vyr0l6u" path="res://scripts/dialogues/dialogue_line.gd" id="1_pvq0m"]
+
+[resource]
+script = ExtResource("1_pvq0m")
+character_name = "player"
+text = "I’ve heard lots about this place, geez I hope the climb’s easier than what everyone said…"
+delay_before = 0.0
+text_speed = 0.02
+metadata/_custom_type_script = "uid://ppxj4vyr0l6u"
