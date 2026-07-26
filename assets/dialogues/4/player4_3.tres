@@ -7,5 +7,5 @@ script = ExtResource("1_nnyhw")
 character_name = "Player"
 text = "I mean, stuff is connected, sometimes?"
 delay_before = 0.6
-text_speed = 0.2
+text_speed = 0.06
 metadata/_custom_type_script = "uid://ppxj4vyr0l6u"

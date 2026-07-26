@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("1_ckbqi")
-character_name = "dev"
+character_name = "Dev"
 text = "but I’m worried about the time crunch. I think the deadline should be achievable, though?"
 delay_before = 0.0
 text_speed = 0.06

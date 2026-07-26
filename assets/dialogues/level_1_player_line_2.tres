@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("1_kt3bf")
-character_name = "player"
+character_name = "Player"
 text = "Okay, well I have, like, most of the stuff on the checklist. Alright then, lets go!"
 delay_before = 0.5
 metadata/_custom_type_script = "uid://ppxj4vyr0l6u"

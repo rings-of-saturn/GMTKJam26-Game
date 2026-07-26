@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("1_rq4k4")
-character_name = "player"
+character_name = "Player"
 text = "Woah. The landscape… It's so nice. Honestly, I think I could get used to this!"
 delay_before = 1.25
 metadata/_custom_type_script = "uid://ppxj4vyr0l6u"
