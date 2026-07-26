@@ -352,7 +352,7 @@ tile_map_data = PackedByteArray("AAACAAIAAQABAAIAAAABAAIAAQACAAIAAAAAAAIAAQABAAI
 tile_set = SubResource("TileSet_1xhs3")
 
 [node name="Dialogue Trigger" type="Area2D" parent="." unique_id=256135611]
-position = Vector2(-87, -15)
+position = Vector2(-88, -15)
 script = ExtResource("2_5xbjy")
 dialogue = ExtResource("4_4nkto")
 metadata/_edit_group_ = true
@@ -371,7 +371,7 @@ position = Vector2(6, -2)
 shape = SubResource("RectangleShape2D_enspi")
 
 [node name="SpawnPoint" type="Marker2D" parent="." unique_id=560832807]
-position = Vector2(-72, -7)
+position = Vector2(-73, -5)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=2105476531]
 position = Vector2(-170, 6)

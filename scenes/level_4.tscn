@@ -355,7 +355,7 @@ tile_map_data = PackedByteArray("AABCAMv/AQAEAAEAAABCAMz/AQAEAAIAAABCAM3/AQAEAAI
 tile_set = SubResource("TileSet_hhfj6")
 
 [node name="SpawnPoint" type="Marker2D" parent="." unique_id=851768500]
-position = Vector2(637, -382)
+position = Vector2(637, -379)
 
 [node name="barrier" type="StaticBody2D" parent="." unique_id=933485493]
 position = Vector2(593, -378)
@@ -434,7 +434,7 @@ breakable = false
 metadata/_edit_group_ = true
 
 [node name="Dialogue Trigger" type="Area2D" parent="." unique_id=1452744088]
-position = Vector2(622, -392)
+position = Vector2(622, -393)
 script = ExtResource("5_ycko3")
 dialogue = ExtResource("6_x7blo")
 metadata/_edit_group_ = true

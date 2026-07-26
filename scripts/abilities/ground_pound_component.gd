@@ -5,9 +5,9 @@ enum PoundState { IDLE, ACTIVE, COOLDOWN, LANDED }
 @export var pound_min_speed = 350.0
 @export var pound_max_speed = 1200.0
 @export var pound_extra_accel = 3000.0
-@export var bounce_mult = 0.2
+@export var bounce_mult = 0.25
 @export var bounce_cap = -30000.0
-@export var cooldown_time = 20
+@export var cooldown_time = 2
 
 var state: PoundState = PoundState.IDLE
 var cooldown_timer = 0.0

@@ -350,7 +350,7 @@ granted_cards = Array[int]([2, 3, 1])
 time_limit = 60
 
 [node name="SpawnPoint" type="Marker2D" parent="." unique_id=851768500]
-position = Vector2(637, -393)
+position = Vector2(636, -390)
 
 [node name="Tile Map" type="TileMapLayer" parent="." unique_id=1196869407]
 texture_filter = 1

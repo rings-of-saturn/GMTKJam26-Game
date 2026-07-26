@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://bo2ne2m5f3w78" path="res://assets/palletes/grassy.png" id="3_ophlp"]
 [ext_resource type="PackedScene" uid="uid://cvpnip2t2pecw" path="res://scenes/stress/default_falling_tile.tscn" id="4_wu5f3"]
 [ext_resource type="Script" uid="uid://c3wsqtduobx7l" path="res://scripts/dialogue_trigger.gd" id="5_fsh38"]
-[ext_resource type="Resource" uid="uid://de2cdui2u328b" path="res://assets/dialogues/level_1.tres" id="6_e8vmx"]
+[ext_resource type="Resource" uid="uid://ceefslyuma0ax" path="res://assets/dialogues/7/Level7.tres" id="6_ci1vt"]
 [ext_resource type="Script" uid="uid://hibdip53pe7j" path="res://scripts/goal_area.gd" id="7_ci1vt"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ah8om"]
@@ -355,7 +355,7 @@ tile_map_data = PackedByteArray("AAA6AMr/AQAEAAIAAAA6AMv/AQAEAAIAAAA6AMz/AQAEAAE
 tile_set = SubResource("TileSet_hhfj6")
 
 [node name="SpawnPoint" type="Marker2D" parent="." unique_id=851768500]
-position = Vector2(655, -377)
+position = Vector2(655, -372)
 
 [node name="barrier" type="StaticBody2D" parent="." unique_id=933485493]
 position = Vector2(593, -378)
@@ -442,9 +442,9 @@ breakable = false
 metadata/_edit_group_ = true
 
 [node name="Dialogue Trigger" type="Area2D" parent="." unique_id=1954101589]
-position = Vector2(640, -384)
+position = Vector2(641, -384)
 script = ExtResource("5_fsh38")
-dialogue = ExtResource("6_e8vmx")
+dialogue = ExtResource("6_ci1vt")
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Dialogue Trigger" unique_id=268677776]
