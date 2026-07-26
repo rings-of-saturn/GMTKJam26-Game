@@ -49,10 +49,11 @@ var jump_grace_timer = 0.0
 var var_jump_timer= 0.0
 var crouching = false;
 var var_jump_speed = 0.0
-var max_fall_current = MAX_FALL
+var max_fall_current: float = MAX_FALL
 var was_on_ground = false
 var is_attacking = false
 var pre_move_velocity_y: float = 0.0
+var gravity_inverted: bool = false
 
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var collision_shape: CollisionShape2D = $CollisionShape2D
@@ -107,9 +108,10 @@ func _physics_process(delta) -> void:
 	# gravity
 	if not is_on_floor():
 		var grav_mult = 1.0
+		var grav_target := -max_fall_current if gravity_inverted else max_fall_current
 		if absf(velocity.y) < HALF_GRAV_THRESHOLD and Input.is_action_pressed("player_jump"):
 			grav_mult = 0.5
-		velocity.y = move_toward(velocity.y, max_fall_current, GRAVITY * grav_mult * delta)
+		velocity.y = move_toward(velocity.y, grav_target, GRAVITY * grav_mult * delta)
 
 	# jump
 	if var_jump_timer > 0.0:
@@ -146,5 +148,6 @@ func _jump() -> void:
 	jump_grace_timer = 0.0
 	var_jump_timer = VAR_JUMP_TIME
 	var_jump_speed = JUMP_SPEED
-	velocity.y = JUMP_SPEED
+	var jump_mult := -1.0 if gravity_inverted else 1.0
+	velocity.y = JUMP_SPEED * jump_mult
 	velocity.x += JUMP_H_BOOST * Input.get_axis("player_left", "player_right")

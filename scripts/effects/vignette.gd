@@ -3,7 +3,8 @@ extends CanvasLayer
 @onready var rect: ColorRect = $ColorRect
 
 var target_opacity: float = 0.0
-
+var transition_active: bool = false
+var locked: bool = false
 
 func _ready() -> void:
 	rect.modulate = Color(0, 0, 0, 0)
@@ -11,6 +12,8 @@ func _ready() -> void:
 
 
 func _on_phase(phase: StressManager.StressPhase) -> void:
+	if locked or transition_active:
+		return
 	match phase:
 		StressManager.StressPhase.CALM:
 			target_opacity = 0.0
@@ -24,5 +27,28 @@ func _on_phase(phase: StressManager.StressPhase) -> void:
 			target_opacity = 0.50
 
 
+func transition_to(target_color: Color, duration: float) -> void:
+	transition_active = true
+
+	var tween := create_tween()
+	tween.set_parallel(true)
+	tween.tween_property(rect, "modulate:r", target_color.r, duration)
+	tween.tween_property(rect, "modulate:g", target_color.g, duration)
+	tween.tween_property(rect, "modulate:b", target_color.b, duration)
+	tween.tween_property(rect, "modulate:a", target_color.a, duration)
+	await tween.finished
+	transition_active = false
+
+
 func _process(delta: float) -> void:
-	rect.modulate.a = move_toward(rect.modulate.a, target_opacity, delta * 0.3)
+	if locked or transition_active:
+		return
+	rect.modulate.a = move_toward(rect.modulate.a, target_opacity, delta * 2.0)
+
+
+func lock() -> void:
+	locked = true
+
+
+func unlock() -> void:
+	locked = false

@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="DialogueLine" format=3 uid="uid://jdwrg6cc4d2e"]
+
+[ext_resource type="Script" uid="uid://ppxj4vyr0l6u" path="res://scripts/dialogues/dialogue_line.gd" id="1_o4uow"]
+
+[resource]
+script = ExtResource("1_o4uow")
+character_name = "Dev"
+text = "... last day huh. Last day. Not even– half of it left, dang... i guess its gotta be enough by now..."
+metadata/_custom_type_script = "uid://ppxj4vyr0l6u"

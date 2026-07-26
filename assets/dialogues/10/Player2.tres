@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="DialogueLine" format=3 uid="uid://cnynaon2wfep1"]
+
+[ext_resource type="Script" uid="uid://ppxj4vyr0l6u" path="res://scripts/dialogues/dialogue_line.gd" id="1_ji8ba"]
+
+[resource]
+script = ExtResource("1_ji8ba")
+text = "I guess even now— we put so much heart and soul into climbing to this point, the finish"
+metadata/_custom_type_script = "uid://ppxj4vyr0l6u"

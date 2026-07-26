@@ -6,6 +6,10 @@
 [ext_resource type="Texture2D" uid="uid://bo2ne2m5f3w78" path="res://assets/palletes/grassy.png" id="3_desnu"]
 [ext_resource type="Texture2D" uid="uid://ieykdshdfmp2" path="res://assets/palletes/snowy.png" id="4_2q8u2"]
 [ext_resource type="PackedScene" uid="uid://bv0rv3yhnmg3c" path="res://scenes/stress/rock_falling_tile.tscn" id="5_wicpl"]
+[ext_resource type="Script" uid="uid://hibdip53pe7j" path="res://scripts/goal_area.gd" id="6_2q8u2"]
+[ext_resource type="Script" uid="uid://c3wsqtduobx7l" path="res://scripts/dialogue_trigger.gd" id="7_wicpl"]
+[ext_resource type="Resource" uid="uid://cch73mxw0pshj" path="res://assets/dialogues/9/Level9.tres" id="8_8xf63"]
+[ext_resource type="Resource" uid="uid://poy1an830uok" path="res://assets/dialogues/9/Level9Helper.tres" id="9_wicpl"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ah8om"]
 texture = ExtResource("2_541qs")
@@ -478,6 +482,12 @@ sources/2 = SubResource("TileSetAtlasSource_gi7hc")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wae8j"]
 size = Vector2(20, 162)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_chmw8"]
+size = Vector2(8, 54)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pnq0c"]
+size = Vector2(15, 19)
+
 [node name="Level9" type="Node2D" unique_id=601881982]
 script = ExtResource("1_qqlqb")
 granted_cards = Array[int]([2, 1])
@@ -495,10 +505,10 @@ tile_map_data = PackedByteArray("AABUALX/AQABAAIAAABUALT/AQACAAIAAABUALP/AQACAAI
 tile_set = SubResource("TileSet_hhfj6")
 
 [node name="SpawnPoint" type="Marker2D" parent="." unique_id=851768500]
-position = Vector2(668, -662)
+position = Vector2(654, -639)
 
 [node name="barrier" type="StaticBody2D" parent="." unique_id=933485493]
-position = Vector2(731, -651)
+position = Vector2(731, -638)
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="barrier" unique_id=706632649]
@@ -618,3 +628,32 @@ trigger_phase = 4
 [node name="RockFallingTile17" parent="Node2D2" unique_id=57632492 instance=ExtResource("5_wicpl")]
 position = Vector2(355, -917)
 trigger_phase = 4
+
+[node name="Goal Area" type="Area2D" parent="." unique_id=707089799]
+position = Vector2(141, -1517)
+script = ExtResource("6_2q8u2")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Goal Area" unique_id=571001386]
+position = Vector2(6, -17)
+shape = SubResource("RectangleShape2D_chmw8")
+
+[node name="Dialogue Trigger" type="Area2D" parent="." unique_id=652138309]
+position = Vector2(638, -652)
+script = ExtResource("7_wicpl")
+dialogue = ExtResource("8_8xf63")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Dialogue Trigger" unique_id=1073892110]
+position = Vector2(16.5, 6.5)
+shape = SubResource("RectangleShape2D_pnq0c")
+
+[node name="Dialogue Trigger2" type="Area2D" parent="." unique_id=2020751800]
+position = Vector2(587, -660)
+script = ExtResource("7_wicpl")
+dialogue = ExtResource("9_wicpl")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Dialogue Trigger2" unique_id=665898823]
+position = Vector2(16.5, 6.5)
+shape = SubResource("RectangleShape2D_pnq0c")

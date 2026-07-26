@@ -64,9 +64,10 @@ func show_dialogue(set: DialogueSet) -> void:
 
 
 func _type_text(text: String, speed: float) -> void:
-	text_label.text = ""
-	for ch in text:
-		text_label.text += ch
+	text_label.text = text
+	text_label.visible_characters = 0
+	for i in text.length():
+		text_label.visible_characters = i + 1
 		await get_tree().create_timer(speed).timeout
 
 func name_to_sprite(character_name : String):

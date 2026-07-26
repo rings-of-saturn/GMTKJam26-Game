@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="DialogueLine" format=3 uid="uid://dwn25mqguso3a"]
+
+[ext_resource type="Script" uid="uid://ppxj4vyr0l6u" path="res://scripts/dialogues/dialogue_line.gd" id="1_vlihc"]
+
+[resource]
+script = ExtResource("1_vlihc")
+text = "We create what we love, for ourselves. And that’s enough in the end, perhaps?"
+metadata/_custom_type_script = "uid://ppxj4vyr0l6u"

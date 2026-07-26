@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="DialogueLine" format=3 uid="uid://blt7e2r60g265"]
+
+[ext_resource type="Script" uid="uid://ppxj4vyr0l6u" path="res://scripts/dialogues/dialogue_line.gd" id="1_sajsb"]
+
+[resource]
+script = ExtResource("1_sajsb")
+character_name = "Dev"
+text = "Never much of a poet, but I do really think that’s pretty cool of something to say."
+metadata/_custom_type_script = "uid://ppxj4vyr0l6u"
